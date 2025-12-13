@@ -1,1 +1,32 @@
-<p>navbar works!</p>
+<nav class="bg-[#1A1A1A] text-[#D1D1D1]  border-b border-[#2a2a2a] z-100 h-14 w-screen fixed top-0 left-0">
+  <div class="flex items-center justify-between w-full  p-2">
+    <div class="flex items-center  gap-2">
+      <button id="menu" (click)="togglemenu()" class="bg-gray-800" mat-icon-button>
+        <fa-icon class="flex justify-center" [icon]="faBar"></fa-icon>
+      </button>
+      <h1 class="mb-1">Bikewale</h1>
+    </div>
+    <div class="flex items-center gap-4">
+      <app-search-bar/>
+      <button mat-icon-button>
+        <fa-icon class="text-white! flex justify-center" [icon]="faLocationDot"></fa-icon>
+      </button>
+      <button mat-icon-button>
+        <fa-icon class="text-white! flex justify-center" [icon]="faLanguage"></fa-icon>
+      </button>
+      <h1>Login</h1>
+    </div>
+  </div>
+</nav>
+<div  class="w-75 h-screen bg-[#1A1A1A] text-[#D1D1D1] rounded-tr-2xl fixed top-14 -left-75 sidebar ">
+  <div class="flex items-center justify-between p-4">
+    <div class="flex items-center gap-4">
+      <mat-icon>home</mat-icon>
+      <h2>Home</h2>
+    </div>
+    <div>
+      <mat-icon>keyboard_arrow_down</mat-icon>
+    </div>
+  </div>
+</div>
+
