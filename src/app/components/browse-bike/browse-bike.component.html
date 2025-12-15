@@ -30,60 +30,61 @@
 
 
     <!-- BODY STYLE -->
-    <div class="mt-4">
+    <div class="mt-2 mb-10">
+
       @if (selectedCategory == 'bodystyle') {
-    <div class="w-full grid
+      <div class="w-full grid
                grid-cols-2 sm:grid-cols-3 lg:grid-cols-6
                border rounded-xl border-gray-700
                bg-gradient-to-b from-[#1a1a1a] to-[#0f0f0f]">
-      @for (body of bodystyle; track body.id) {
-      <div class="flex flex-col rounded-sm items-center justify-center gap-2
+        @for (body of bodystyle; track body.id) {
+        <div class="flex flex-col rounded-sm items-center justify-center gap-2
                    border border-gray-700
                    py-6 cursor-pointer
                    hover:bg-[#1f1f1f] transition">
-        <img [src]="body.imageUrl" [alt]="body.title" class="w-14 h-14 object-contain" />
-        <p class="text-sm text-gray-200 font-medium">
-          {{ body.title }}
-        </p>
+          <img [src]="body.imageUrl" [alt]="body.title" class="w-14 h-14 object-contain" />
+          <p class="text-sm text-gray-200 font-medium">
+            {{ body.title }}
+          </p>
+        </div>
+        }
       </div>
       }
-    </div>
-    }
 
-    <!-- DISPLACEMENT -->
-    @else if (selectedCategory == 'displacement') {
-    <div class="w-full grid p-4 m-2
+      <!-- DISPLACEMENT -->
+      @else if (selectedCategory == 'displacement') {
+      <div class="w-full grid p-4 m-2
                grid-cols-2 sm:grid-cols-3 lg:grid-cols-4
                border rounded-xl border-gray-700
                bg-gradient-to-b from-[#1a1a1a] to-[#0f0f0f]">
-      @for (displacment of displacements; track displacment.id) {
-      <p class="border cursor-pointer text-center
+        @for (displacment of displacements; track displacment.id) {
+        <p class="border cursor-pointer text-center
                    border-gray-700 hover:bg-[#1f1f1f] transition
                    rounded-xl p-2 py-4 font-medium m-2">
-        {{ displacment.cc }}cc
-      </p>
+          {{ displacment.cc }}cc
+        </p>
+        }
+      </div>
       }
-    </div>
-    }
 
-    <!-- BUDGET -->
-    @else if (selectedCategory == 'budget') {
-    <div class="w-full grid p-4
+      <!-- BUDGET -->
+      @else if (selectedCategory == 'budget') {
+      <div class="w-full grid p-4
                grid-cols-2 sm:grid-cols-3 lg:grid-cols-4
                border border-gray-700 rounded-xl
                bg-gradient-to-b from-[#1a1a1a] to-[#0f0f0f]">
-      @for (price of prices; track price.id) {
-      <div class="flex items-center justify-center
+        @for (price of prices; track price.id) {
+        <div class="flex items-center justify-center
                    border border-gray-700
                    py-4 cursor-pointer rounded-sm
                    hover:bg-[#1f1f1f] transition m-2">
-        <p class="text-sm text-gray-200 font-medium">
-          {{ price.price }}
-        </p>
+          <p class="text-sm text-gray-200 font-medium">
+            {{ price.price }}
+          </p>
+        </div>
+        }
       </div>
       }
-    </div>
-    }
     </div>
   </div>
 </div>
