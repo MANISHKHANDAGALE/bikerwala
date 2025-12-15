@@ -14,7 +14,7 @@ export interface BikeInfo {
 
 export class BikeService {
 
-  private url = "https://bikewala-api.onrender.com/api/assets/"
+   url = "https://bikewala-api.onrender.com/api/assets"
 
   constructor(private http: HttpClient) { }
 
