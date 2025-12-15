@@ -5,9 +5,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faBars,faLocationDot,faLanguage, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { SearchBarComponent } from "../search-bar/search-bar.component";
 import gsap from 'gsap'
+import { RouterLink } from "@angular/router";
 @Component({
   selector: 'app-navbar',
-  imports: [MatIconModule, MatIconButton, FontAwesomeModule, SearchBarComponent],
+  imports: [MatIconModule, MatIconButton, FontAwesomeModule, SearchBarComponent, RouterLink],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })

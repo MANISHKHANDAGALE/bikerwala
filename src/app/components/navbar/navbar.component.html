@@ -1,26 +1,28 @@
-<nav class="bg-[#1A1A1A] text-[#D1D1D1]  border-b border-[#2a2a2a] z-100 h-14 w-full fixed">
+<nav class="bg-[#1A1A1A] text-[#D1D1D1]  border-b border-[#2a2a2a] z-100 h-14 w-full fixed top-0 left-0">
   <div class="flex items-center justify-between w-full  p-2">
     <div class="flex items-center  gap-2">
       <button id="menu" (click)="togglemenu()" class="bg-gray-800" mat-icon-button>
         <fa-icon class="flex justify-center" [icon]="faBar"></fa-icon>
       </button>
       <!-- <h1 class="mb-1 text-2xl">Bikewale</h1> -->
-       <img src="bikewale-logo-new-header.svg" class="w-32 h-full invert object-cover "  alt="">
+       <img routerLink="/" src="bikewale-logo-new-header.svg" class="w-32 h-full invert object-cover cursor-pointer "  alt="">
     </div>
     <div class="flex items-center   gap-4  ">
       <app-search-bar class="md:block hidden" [placeholder]="'Search ...'" [width]="'320px'"/>
        <div class="md:hidden block ">
-         <button  mat-icon-button>
+         <button routerLink="/"  mat-icon-button>
            <fa-icon class="text-white! flex justify-center md:ml-0 ml-20" [icon]="faMagnifyingGlass"></fa-icon>
          </button>
        </div>
-      <button mat-icon-button>
+      <button routerLink="/"  mat-icon-button>
         <fa-icon class="text-white! flex justify-center md:ml-0 ml-20" [icon]="faLocationDot"></fa-icon>
       </button>
-      <button mat-icon-button>
+      <button routerLink="/"  mat-icon-button>
         <fa-icon class="text-white! flex justify-center md:block hidden" [icon]="faLanguage"></fa-icon>
       </button>
-      <h1 class="text-lg md:block hidden">Login</h1>
+      <button class="bg-red-500 p-1 px-3 rounded-2xl text-white">
+        <h1 routerLink="/signIn" class="text-lg md:block hidden cursor-pointer">Login</h1>
+      </button>
     </div>
   </div>
 </nav>
