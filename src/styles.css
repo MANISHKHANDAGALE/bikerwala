@@ -34,9 +34,70 @@
   --transition-normal: 0.35s ease;
 }
 
+
+
 /* =========================
    BASE RESET
    ========================= */
+
+   /* ============================= */
+/* Swiper default navigation */
+/* ============================= */
+
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+
+
+.swiper-button-next,
+.swiper-button-prev {
+  width: 44px;
+  height: 44px;
+  background-color: #1A1A1A;
+  border: 1px solid #91D9D3;
+  border-radius: 9999px;
+
+  color: #91D9D3;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+
+  transition: all 0.3s ease;
+}
+
+/* Arrow icon */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Hover */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: #91D9D3;
+  color: #1A1A1A;
+  transform: scale(1.1);
+}
+
+/* Disabled state */
+.swiper-button-disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.swiper-button-prev {
+  left: 10px;
+}
+
+.swiper-button-next {
+  right: 10px;
+}
+@media (max-width: 640px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
+}
+
 
 
 html {
