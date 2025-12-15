@@ -18,15 +18,28 @@
     </div>
   </div>
 </nav>
-<div  class="w-75 h-screen bg-[#1A1A1A] text-[#D1D1D1] rounded-tr-2xl fixed top-14 -left-75 z-90 sidebar ">
-  <div class="flex items-center justify-between p-4">
-    <div class="flex items-center gap-4">
-      <mat-icon>home</mat-icon>
-      <h2>Home</h2>
+<div  class="w-75 h-full bg-[#1A1A1A] text-[#D1D1D1] rounded-tr-2xl fixed top-14 -left-75 z-90  sidebar ">
+  @for (item of menu; track item) {
+      <div (click)="togglediv(item)" class="flex items-center justify-between cursor-pointer hover:bg-white rounded-2xl hover:text-[#1A1A1A] p-4">
+      <div class="flex items-center gap-4">
+        <mat-icon>{{item.icon}}</mat-icon>
+        <h2>{{item.label}}</h2>
+      </div>
+      @if (item.children) {
+        <div>
+          <mat-icon>{{item.icon2}}</mat-icon>
+        </div>
+      }
     </div>
-    <div>
-      <mat-icon>keyboard_arrow_down</mat-icon>
+    @if (item.children && item.open) {
+       <div class="pl-12 pb-2 text-sm text-gray-400 transition-all ease-in-out duration-500">
+      @for (child of item.children; track child) {
+        <div class="py-1 hover:text-white cursor-pointer">
+          {{ child }}
+        </div>
+      }
     </div>
-  </div>
+    }
+    }
 </div>
 

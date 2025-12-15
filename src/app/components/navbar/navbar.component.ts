@@ -12,6 +12,57 @@ import gsap from 'gsap'
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent implements AfterViewInit {
+  menu = [
+  { label: 'Home', icon: 'home', open: false },
+
+  {
+    label: 'New Bikes',
+    icon: 'two_wheeler',
+    icon2: 'keyboard_arrow_down',
+    open: false,
+    children: ['Upcoming', 'Popular']
+  },
+
+  {
+    label: 'New Scooters',
+    icon: 'electric_scooter',
+    icon2: 'keyboard_arrow_down',
+    open: false,
+    children: ['Top Scooters']
+  },
+
+  { label: 'Electric Bikes', icon: 'bolt', open: false },
+
+  { label: 'Bike Loan', icon: 'account_balance_wallet', open: false },
+
+  { label: 'Used Bikes', icon: 'history', open: false },
+
+  {
+    label: 'Sell Bikes',
+    icon: 'sell',
+    icon2: 'keyboard_arrow_down',
+    open: false,
+    children: ['Sell Your Bike']
+  },
+
+  { label: 'Reviews', icon: 'chat', open: false },
+
+  {
+    label: 'News, Videos & Tips',
+    icon: 'article',
+    icon2: 'keyboard_arrow_down',
+    open: false,
+    children: ['News', 'Videos']
+  },
+
+  { label: 'EMI Calculator', icon: 'calculate', open: false },
+
+  { label: 'Login', icon: 'person', open: false }
+];
+
+   togglediv(item:any){
+   item.open = !item.open
+   }
    private t1!: gsap.core.Timeline;
    faBar = faBars;
    faLocationDot = faLocationDot
