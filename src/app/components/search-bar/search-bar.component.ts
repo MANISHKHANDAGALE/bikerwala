@@ -53,6 +53,5 @@ export class SearchBarComponent {
     console.log("searched :",this.suggestions())
     console.log(" recent searched :",this.recentSearch)
   },1000)
-
  }
 }
