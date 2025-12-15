@@ -2,7 +2,7 @@ import { AfterViewChecked, AfterViewInit, Component } from '@angular/core';
 import {MatIcon, MatIconModule} from '@angular/material/icon';
 import {MatButton,MatIconButton ,MatButtonModule} from '@angular/material/button';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faBars,faLocationDot,faLanguage } from '@fortawesome/free-solid-svg-icons';
+import { faBars,faLocationDot,faLanguage, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { SearchBarComponent } from "../search-bar/search-bar.component";
 import gsap from 'gsap'
 @Component({
@@ -12,6 +12,7 @@ import gsap from 'gsap'
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent implements AfterViewInit {
+  faMagnifyingGlass=faMagnifyingGlass
   menu = [
   { label: 'Home', icon: 'home', open: false },
 
