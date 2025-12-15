@@ -10,20 +10,18 @@
   @if (show) {
     <div class="bg-white text-black absolute top-full w-full left-0 rounded-2xl mt-1 z-90">
       <div class="m-1">
-        <h1>recent search</h1>
-        @for (item of recentSearch(); track item) {
-          <div class="flex items-center cursor-pointer gap-4">
-            <mat-icon>access_time</mat-icon>
-            <h1 class="text-xl mb-1">{{item}}</h1>
+        <h1>Recent Searched</h1>
+        @for (item of recentSearch; track item) {
+          <div  class="flex items-center  mx-8 cursor-pointer gap-4">
+            <mat-icon >access_time</mat-icon>
+            <h1 (click)="onSearch(item)" class="text-xl mb-1">{{item}}</h1>
+            <button (click)="delete(item)"  mat-icon-button><mat-icon  >delete</mat-icon></button>
           </div>
         }
       </div>
       @for (item of suggestions(); track item) {
         <div class="flex flex-col items-center rounded-xl  px-4 py-2 cursor-pointer hover:bg-gray-200">
-          <a class="text-black ">{{item}}</a>
-        </div>
-        <div class="flex flex-col items-center rounded-xl  px-4 py-2 cursor-pointer hover:bg-gray-200">
-          <a class="text-black ">{{item}}</a>
+          <a class="text-black! ">{{item}}</a>
         </div>
       }
     </div>
