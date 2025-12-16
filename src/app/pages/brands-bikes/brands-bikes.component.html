@@ -1,0 +1,44 @@
+<div class="bg-gradient-to-r p-6 rounded-xl mt-[182px]">
+
+    <div class="w-[992px] mx-auto">
+        <!-- Title -->
+        <h1 class="text-2xl font-semibold text-white">
+            {{ bikeInfo?.title }}
+        </h1>
+
+        <!-- Rating Row -->
+        <div class="flex items-center gap-3 mt-2 text-sm">
+
+            <!-- Stars -->
+            <div class="flex items-center gap-1 text-[#63B1DC]">
+                <!-- Full stars -->
+                @for (i of [].constructor(fullStars); track i) {
+                <span>★</span>
+                }
+
+                <!-- Half star -->
+                @if (hasHalfStar) {
+                <span class="opacity-60">★</span>
+                }
+
+                <!-- Empty stars -->
+                @for (i of [].constructor(emptyStars); track i) {
+                <span class="text-gray-500">★</span>
+                }
+            </div>
+
+            <!-- Rating Count -->
+            <span class="text-[#63B1DC] font-medium">
+                {{ bikeInfo?.rating ?? 1039 }} Ratings
+            </span>
+
+            <!-- Divider -->
+            <span class="text-gray-500">|</span>
+
+            <!-- Write Review -->
+            <a href="#" class="text-[#63B1DC] hover:underline">
+                Write Review
+            </a>
+        </div>
+    </div>
+</div>
