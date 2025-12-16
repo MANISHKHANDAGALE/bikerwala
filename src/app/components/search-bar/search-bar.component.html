@@ -1,4 +1,4 @@
-<div  #wrapper [ngStyle] = "{width: width()}" class="relative">
+<div  #wrapper [ngStyle] = "{width: width()}" class="relative bg-(--bg-primary)">
   <div class=" border border-[#BABABA] text-(--text-primary) rounded-md">
     <div class=" flex items-center justify-between  px-2 ">
       <input #searchBox (input)="onSearch(searchBox.value)" (focus)="open()" class="outline-none w-full p-1" type="text" name="" [placeholder]="placeholder()" [value]="query" id="">
