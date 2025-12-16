@@ -1,0 +1,89 @@
+<div class="max-w-300 mx-auto px-4 mb-5">
+
+  
+  <!-- PAGE HEADER -->
+  <section class="mt-15 mb-10">
+
+    <h1 class="text-3xl font-semibold text-white mb-3">
+      Royal Enfield Bikes
+    </h1>
+
+    <p class="text-gray-300 text-sm leading-relaxed max-w-5xl">
+      Royal Enfield bike price starts from Rs. 1,37,640. Royal Enfield offers
+      14 new models in India with most popular bikes being Classic 350,
+      Hunter 350 and Continental GT 650. The upcoming bikes of Royal Enfield
+      include Flying Flea C6, Bullet 650 and Scrambler 450. Most expensive
+      Royal Enfield bike is
+      <span class="text-cyan-400 cursor-pointer hover:underline">
+        Read More
+      </span>
+    </p>
+
+  </section>
+
+  <!-- PRICE SECTION TITLE -->
+  <h2 class="text-2xl font-semibold text-white mb-4">
+    Royal Enfield Bikes Price in India
+  </h2>
+
+  <!-- Tabs -->
+  <app-bike-tabs></app-bike-tabs>
+
+  <!-- Main Two Column Layout -->
+  <div class="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-6 mt-6">
+
+    <!-- LEFT COLUMN -->
+    <div class="space-y-6">
+      <app-bike-filters></app-bike-filters>
+
+      <div class="space-y-4">
+        <app-bike-card
+          *ngFor="let bike of bikes"
+          [image]="bike.image"
+          [name]="bike.name"
+          [price]="bike.price"
+          [rating]="bike.rating"
+          [reviews]="bike.reviews"
+          [specs]="bike.specs"
+          [location]="bike.location">
+        </app-bike-card>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <aside class="space-y-4">
+
+  <!-- Showrooms -->
+  <div>
+    <h3 class="text-xl font-semibold text-white">
+      Royal Enfield Bikes Showrooms in Mumbai
+    </h3>
+    <p class="text-sm text-gray-400 mt-1">
+      Show Dealer/Store results for
+      <span class="text-cyan-400 cursor-pointer">All India</span>
+    </p>
+  </div>
+
+  <app-showroom-card
+    *ngFor="let showroom of showrooms"
+    [name]="showroom.name"
+    [address]="showroom.address">
+  </app-showroom-card>
+
+  <!-- Brands Similar -->
+  <app-brand-similar-card
+    [brands]="similarBrands">
+  </app-brand-similar-card>
+
+  <!-- Research More -->
+  <app-research-more-card
+    [links]="researchLinks">
+  </app-research-more-card>
+
+</aside>
+
+    
+
+  </div>
+</div>
+<app-footer/>

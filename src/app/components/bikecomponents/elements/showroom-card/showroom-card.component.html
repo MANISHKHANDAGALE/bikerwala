@@ -1,0 +1,27 @@
+<app-card
+  [tailwindClass]="
+    'bg-[#1b1b1b] rounded-xl border border-white/10
+     p-4 space-y-3 hover:border-cyan-400/30 transition mb-3'
+  "
+>
+  <!-- Showroom Name -->
+  <h3 class="text-white font-semibold text-lg">
+    {{ name }}
+  </h3>
+
+  <!-- Address -->
+  <div class="flex gap-3 text-gray-300 text-sm leading-relaxed">
+    <i class="fa-solid fa-location-dot text-gray-400 mt-1"></i>
+    <span>{{ address }}</span>
+  </div>
+
+  <!-- CTA -->
+  <button
+    class="flex items-center gap-2 text-cyan-400 text-sm font-medium
+           hover:underline w-fit"
+    (click)="$event.stopPropagation()"
+  >
+    Get Directions
+    <i class="fa-solid fa-arrow-right text-xs"></i>
+  </button>
+</app-card>
