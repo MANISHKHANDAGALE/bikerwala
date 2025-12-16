@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component, effect, ElementRef, HostListener, input, signal, ViewChild } from '@angular/core';
+import { Component, effect, ElementRef, HostListener, inject, input, signal, ViewChild } from '@angular/core';
 import {MatIconButton ,MatButtonModule} from '@angular/material/button';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { BIKE_SEARCH_DATA } from '../../dummy-data';
 import { MatIcon } from "@angular/material/icon";
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-search-bar',
   imports: [FontAwesomeModule, MatIconButton, CommonModule, MatIcon],
@@ -15,7 +16,7 @@ export class SearchBarComponent {
   LeftIcon = input<boolean>(false);
  show = false;
 @ViewChild('wrapper') wrapper!: ElementRef;
-
+router = inject(Router)
 @HostListener('document:click', ['$event'])
 handleOutsideClick(event: MouseEvent) {
   if (!this.wrapper.nativeElement.contains(event.target)) {
@@ -30,11 +31,24 @@ open() {
 close() {
   this.show = false;
 }
-
+selectedBike(){
+  if(this.query !== ''){
+    this.router.navigate(['/bike-brand'],{
+    queryParams:{
+      bike : this.query
+    }
+    })
+    this.close();
+    this.query = ''
+  }
+  else{
+    alert("Please Enter Bike Name")
+  }
+}
 select(value: string) {
   this.query = value;
   this.onSearch(value);
-  // this.close();
+
 }
  faMagnifyingGlass=faMagnifyingGlass
  query = ''

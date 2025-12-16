@@ -2,7 +2,7 @@
   <div class=" border border-[#BABABA] text-(--text-primary) rounded-md">
     <div [class]="LeftIcon()?'flex flex-row-reverse':'flex'" class="items-center justify-between  px-2 ">
       <input #searchBox (input)="onSearch(searchBox.value)" (focus)="open()" class="outline-none w-full p-1 text-[16px]" type="text" name="" [placeholder]="placeholder()" [value]="query" id="">
-      <button mat-icon-button>
+      <button (click)="selectedBike()" mat-icon-button>
       <fa-icon class="text-white! flex justify-center" [icon]="faMagnifyingGlass" />
       </button>
     </div>
