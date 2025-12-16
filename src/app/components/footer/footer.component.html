@@ -1,21 +1,21 @@
-<footer class="w-full mt-2 text-[#D1D1D1] h-95 bg-(--footer-color)">
-<section class="mx-64 w-250 flex flex-col">
- <div class="w-full flex items-center h-22.5  border-b border-(--border-color)/50">
-  <div class="flex gap-2">
+<footer class="max-w-full overflow-hidden mt-2 text-[#D1D1D1] md:h-95 sm:h-fit bg-(--footer-color)">
+<section class="md:mx-64 sm:mx-0 md:w-250 sm:w-auto flex flex-col">
+ <div class="w-full  flex items-center h-22.5  border-b border-(--border-color)/50">
+  <div class="flex ml-15 md:ml-0 gap-2 ">
     <h1 class="text-[13px]" >Language:</h1>
     <h1 class="text-[13px] font-bold" >English</h1>
     <h1 class="text-[13px]" >हिंदी</h1>
   </div>
-   <span class="inline-block m-[60px] h-8 w-px bg-(--accent-primary)/30"></span>
+   <span class="inline-block m-15 h-8 w-px bg-(--accent-primary)/30"></span>
   <div class="w-[320px] ">
     <div class="flex w-full gap-25">
       <h1>About Us</h1>
-      <h1>Advertise</h1>
+      <h1 class="hidden md:block">Advertise</h1>
     </div>
   </div>
  </div>
- <div class="w-full flex items-center h-28.75 border-b border-(--border-color)/50">
-  <div class="flex flex-col w-1/2 mb-6  gap-6">
+ <div class="w-full grid md:grid-cols-2 sm:grid-cols-1 items-center justify-center sm:h-40  h-28.75 border-b border-(--border-color)/50">
+  <div class="grid md:grid-col-2 sm:grid-cols-1 w-1/2 gap-6">
     <h1 class="text-[12px] font-bold uppercase text-(--text-tertiary)">Connect with us</h1>
     <div class="flex gap-8">
       <i  class="fa-brands fa-facebook fa-2xl"></i>
@@ -25,11 +25,11 @@
       <i class="fa-brands fa-instagram fa-2xl"></i>
     </div>
   </div>
-  <div class="w-1/2 flex flex-col gap-1 h-16">
+  <div class="w-1/2 flex flex-col gap-3 mt-4 md:border-none sm:border-t border-(--border-color)/50 hidden md:block ">
     <div>
       <h1 class="text-[12px] font-bold uppercase text-(--text-tertiary)">Download Mobile App</h1>
     </div>
-    <div class="flex items-center gap-2">
+    <div class="flex items-center gap-8">
       <img class="w-25 h-9" src="app-store.svg" alt="">
       <img class="w-28 h-9" src="play-store.svg" alt="">
     </div>
@@ -54,7 +54,6 @@
   <h1>©CarTrade Tech.</h1>
   <h1>Visitor Agreement & Privacy Policy</h1>
  </div>
-
-
 </section>
 </footer>
+
