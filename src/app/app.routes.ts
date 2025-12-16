@@ -20,18 +20,18 @@ export const routes: Routes = [
     path:'signUp',
     loadComponent:() => import('./components/sign-up/sign-up.component')
   },
-  {
-    path: 'bike-brand',
-    component: BikeBrandListComponent,
-    data: { title: 'Bike Brands' }
-  },
-  // 🔐 Protected Bike Brand Details
-  {
-    path: 'bike-brand/:bikename',
-    component: BikeBrandDetailsComponent,
-    canActivate: [authGuard],
-    data: { title: 'Bike Brand Details' }
-  },
+  //  {
+  //   path: 'bike-brand',
+  //   component: BikeBrandListComponent,
+  //   data: { title: 'Bike Brands' }
+  // },
+  // // 🔐 Protected Bike Brand Details
+  // {
+  //   path: 'bike-brand/:bikename',
+  //   component: BikeBrandDetailsComponent,
+  //   canActivate: [authGuard],
+  //   data: { title: 'Bike Brand Details' }
+  // },
   {
     path: '**',
     redirectTo: ''
