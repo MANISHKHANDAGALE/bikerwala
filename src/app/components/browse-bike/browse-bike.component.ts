@@ -1,82 +1,84 @@
-import { UpperCasePipe } from '@angular/common';
+import { CommonModule, UpperCasePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { BIKE_SEARCH_DATA } from '../../dummy-data';
+import { brand, BrandName, Prodcuts } from '../../data/data';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-browse-bike',
-  imports: [UpperCasePipe, NgClass],
+  imports: [UpperCasePipe, NgClass, CommonModule, RouterLink],
   templateUrl: './browse-bike.component.html',
   styleUrl: './browse-bike.component.css'
 })
 export class BrowseBikeComponent {
-  categories = ["brand", "budget","displacement", "bodystyle"]
+  categories = ["brand", "budget", "displacement", "bodystyle"]
 
   selectedCategory = "brand"
 
-  onCategorySelect(category: string){
-     this.selectedCategory = category;
-     console.log(this.selectedCategory)
+  onCategorySelect(category: string) {
+    this.selectedCategory = category;
+    console.log(this.selectedCategory)
   }
 
   bodystyle = [
     {
-      id:1,
+      id: 1,
       title: "Sports Bike",
       imageUrl: "bodystyle_svg/sports.svg"
     },
     {
-      id:2,
+      id: 2,
       title: "Scooter",
       imageUrl: "bodystyle_svg/scooters.svg"
     },
     {
-      id:3,
+      id: 3,
       title: "Cruiser",
       imageUrl: "bodystyle_svg/cruiser.svg"
     },
     {
-      id:4,
+      id: 4,
       title: "Commuter",
       imageUrl: "bodystyle_svg/commuter.svg"
     },
     {
-      id:5,
+      id: 5,
       title: "Street Bike",
       imageUrl: "bodystyle_svg/street-bikes.svg"
     },
     {
-      id:6,
+      id: 6,
       title: "Super Bike",
       imageUrl: "bodystyle_svg/super-bikes.svg"
     },
     {
-      id:7,
+      id: 7,
       title: "Cafe Bike",
       imageUrl: "bodystyle_svg/cafe-racer.svg"
     },
     {
-      id:8,
+      id: 8,
       title: "Advebture Bike",
       imageUrl: "bodystyle_svg/adventure.svg"
     },
     {
-      id:9,
+      id: 9,
       title: "Scramble",
       imageUrl: "bodystyle_svg/scrambler.svg"
     },
     {
-      id:10,
+      id: 10,
       title: "Moped",
       imageUrl: "bodystyle_svg/moped.svg"
     },
     {
-      id:11,
+      id: 11,
       title: "Touren Bike",
       imageUrl: "bodystyle_svg/tourer.svg"
     },
     {
-      id:12,
+      id: 12,
       title: "Maxi Scooter",
       imageUrl: "bodystyle_svg/maxi-scooters.svg"
     },
@@ -115,7 +117,7 @@ export class BrowseBikeComponent {
       id: 8,
       cc: "Above 500"
     },
-  
+
   ]
 
   prices = [
@@ -152,4 +154,26 @@ export class BrowseBikeComponent {
       price: "Above 2 Lakh"
     },
   ]
+
+  brand: BrandName[] = brand
+
+  VISIBLE_COUNT = 10;
+
+  showAll = false;
+
+  toggleShowAll() {
+    this.showAll = !this.showAll;
+  }
+
+
+  get visibleBrands(): BrandName[] {
+  return this.showAll
+    ? this.brand
+    : this.brand.slice(0, this.VISIBLE_COUNT);
+}
+
+  getBrandId(getBrandId: string) {
+    console.log("Selected Brand ID:", getBrandId)
+  }
+
 }

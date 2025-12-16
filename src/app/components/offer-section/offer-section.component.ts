@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { SliderComponent } from "../slider/slider.component";
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CardComponent } from "../card/card.component";
+import { Prodcuts, productsList } from '../../data/data';
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-offer-section',
@@ -26,60 +28,22 @@ export class OfferSectionComponent {
     },
     1024: {
       slidesPerView: 4,
-      spaceBetween: 12,
+      spaceBetween: 18,
     },
     // no 1280+ breakpoint → falls back to slidesPerView = 4
   };
 
-  slides = [
-    {
-      id: 1,
-      title: 'slide 1',
-      description: "This is the description for slide 1"
+  slides: Prodcuts[] = [];
 
-    },
-    {
-      id: 2,
-      title: 'slide 2',
-      description: "This is the description for slide 2"
+  ngOnInit() {
+    this.slides = this.getRandomBikes(productsList, 8);
+  }
 
-    },
-    {
-      id: 3,
-      title: 'slide 3',
-      description: "This is the description for slide 3"
-
-    },
-    {
-      id: 4,
-      title: 'slide 4',
-      description: "This is the description for slide 4"
-
-    },
-    {
-      id: 4,
-      title: 'slide 4',
-      description: "This is the description for slide 4"
-
-    },
-    {
-      id: 4,
-      title: 'slide 4',
-      description: "This is the description for slide 4"
-
-    },
-    {
-      id: 4,
-      title: 'slide 4',
-      description: "This is the description for slide 4"
-
-    },
-    {
-      id: 4,
-      title: 'slide 4',
-      description: "This is the description for slide 4"
-
-    },
-  ]
+  private getRandomBikes(list: Prodcuts[], count: number): Prodcuts[] {
+    return [...list]
+      .filter(bike => bike.priceExShowroom) // only priced bikes
+      .sort(() => 0.5 - Math.random())
+      .slice(0, count);
+  }
 
 }

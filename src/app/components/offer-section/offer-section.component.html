@@ -15,19 +15,37 @@
   }" [breakpoints]="breakpoints" containerClass="w-full h-[229.5px] mt-6 rounded-md">
       @for (slide of slides; track slide.id) {
       <swiper-slide>
-        <div class="h-full  rounded-2xl flex items-center justify-center bg-[#252525] p-4">
-          <app-card tailwindClass="p-4  text-black rounded-lg  w-full max-w-xs">
-            <h2 class="text-lg font-bold mb-2">
-              {{ slide.title }}
-            </h2>
-            <p class="text-sm text-gray-700">
-              {{ slide.description }}
-            </p>
-          </app-card>
+        <div class="h-full flex items-center justify-center">
+          <!-- CARD -->
+          <div class="w-[239px] h-[230px] bg-[#1E1E1E] rounded-2xl p-4
+                 flex flex-col justify-between border border-[#2E2E2E]">
+            <div class="w-full h-[110px] flex items-center justify-center">
+              <img [src]="slide.imageUrl" class="max-h-full object-contain" />
+            </div>
+
+            <div>
+              <h2 class="text-[14px] font-semibold text-white">
+                {{ slide.title }}
+              </h2>
+
+              <p class="text-[14px] text-white font-bold mt-1">
+                ₹ {{ slide.price }}
+                <span class="text-[11px] text-gray-400">Onwards</span>
+              </p>
+            </div>
+
+            <div class="w-full h-px bg-[#3F3F3F] my-2"></div>
+
+            <button class="text-[13px] font-bold text-[#63B1DC] self-start text-left">
+              Get Best Offer
+            </button>
+
+          </div>
         </div>
       </swiper-slide>
       }
     </app-slider>
+
 
   </div>
 </div>

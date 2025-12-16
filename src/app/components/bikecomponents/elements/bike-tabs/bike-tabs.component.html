@@ -1,0 +1,22 @@
+<div class="border-b border-white/10">
+  <div class="flex gap-8 text-sm font-medium">
+    <button
+      *ngFor="let tab of tabs"
+      (click)="setActive(tab)"
+      class="pb-3 relative transition"
+      [ngClass]="
+        activeTab === tab
+          ? 'text-cyan-400'
+          : 'text-gray-400 hover:text-white'
+      "
+    >
+      {{ tab }}
+
+      <!-- Active underline -->
+      <span
+        *ngIf="activeTab === tab"
+        class="absolute left-0 bottom-0 w-full h-0.5 bg-cyan-400 rounded">
+      </span>
+    </button>
+  </div>
+</div>
