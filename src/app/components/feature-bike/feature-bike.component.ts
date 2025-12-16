@@ -2,7 +2,7 @@ import { NgClass, TitleCasePipe, UpperCasePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { SliderComponent } from "../slider/slider.component";
 import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core"
-import { BikeService } from '../../services/bike.service';
+import { Prodcuts, productsList } from '../../data/data';
 
 @Component({
   selector: 'app-feature-bike',
@@ -21,26 +21,21 @@ export class FeatureBikeComponent {
     1250: { slidesPerView: 3, spaceBetween: 10 }
   };
 
-  categories = ["trending", "popular", "electric", "upcoming" ]
+  categories = ['trending', 'popular', 'electric', 'upcoming'];
 
-  selectedCategory = "trending"
+  selectedCategory: string = 'trending';
 
-  bikes: any[] = []
-  loading = false;
-  error = '';
+  // bikes: Prodcuts[] = productsList;
 
-  constructor(private bikeService: BikeService) {}
+  /* 🔹 Cached filtered list */
+  // get filteredBikes(): Prodcuts[] {
+  //   return this.bikes.filter(bike =>
+  //     bike.tags?.includes(this.selectedCategory)
+  //   );
+  // }
 
-  ngOnInit(){
-    console.log(this.bikeService.getBike().subscribe((data:any) => {
-      console.log(data.data)
-    }))
-  } 
-
-
-  onCategorySelect(category: string){
-     this.selectedCategory = category;
-     console.log(this.selectedCategory)
+  onCategorySelect(category: string) {
+    this.selectedCategory = category;
   }
 
 
