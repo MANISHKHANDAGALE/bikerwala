@@ -33,7 +33,7 @@ close() {
 }
 selectedBike(){
   if(this.query !== ''){
-    this.router.navigate(['/bike-brand'],{
+    this.router.navigate(['/brand/bikebrand'],{
     queryParams:{
       bike : this.query
     }
