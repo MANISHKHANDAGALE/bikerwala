@@ -2,6 +2,7 @@ import { UpperCasePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { BIKE_SEARCH_DATA } from '../../dummy-data';
+import { brand, BrandName } from '../../data/data';
 
 @Component({
   selector: 'app-browse-bike',
@@ -152,4 +153,11 @@ export class BrowseBikeComponent {
       price: "Above 2 Lakh"
     },
   ]
+
+  brand: BrandName[] = brand
+
+  getBrandId(getBrandId: string){
+    console.log("Selected Brand ID:", getBrandId)
+  }
+  
 }

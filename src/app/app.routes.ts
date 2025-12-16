@@ -8,19 +8,19 @@ export const routes: Routes = [
     component: HomeComponent,
     data: { title: 'Home' }
   },
-   {
-    path: 'bike-brand',
-    component: BikeBrandListComponent,
-    data: { title: 'Bike Brands' }
-  },
+  //  {
+  //   path: 'bike-brand',
+  //   component: BikeBrandListComponent,
+  //   data: { title: 'Bike Brands' }
+  // },
 
-  // 🔐 Protected Bike Brand Details
-  {
-    path: 'bike-brand/:bikename',
-    component: BikeBrandDetailsComponent,
-    canActivate: [authGuard],
-    data: { title: 'Bike Brand Details' }
-  },
+  // // 🔐 Protected Bike Brand Details
+  // {
+  //   path: 'bike-brand/:bikename',
+  //   component: BikeBrandDetailsComponent,
+  //   canActivate: [authGuard],
+  //   data: { title: 'Bike Brand Details' }
+  // },
   {
     path: '**',
     redirectTo: ''
