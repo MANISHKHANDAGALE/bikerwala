@@ -28,7 +28,7 @@
 </nav>
 <div (click)="close()" class="overlay w-full h-full bg-black/75 text-[#D1D1D1] rounded-tr-2xl fixed top-14 left-0 opacity-0 hidden z-90">
 </div>
-<div class=" absolute inset-0 w-75 h-full -left-75 z-100 bg-[#1A1A1A] sidebar">
+<div class=" fixed top-0 w-75 h-full -left-75 z-100 bg-[#1A1A1A] sidebar">
   @for (item of menu; track item) {
       <div (click)="togglediv(item)" class="flex items-center justify-between cursor-pointer hover:bg-white rounded-2xl hover:text-[#1A1A1A] sidebar p-4">
       <div class="flex items-center gap-4">

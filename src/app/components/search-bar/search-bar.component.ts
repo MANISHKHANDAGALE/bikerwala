@@ -12,6 +12,7 @@ import { MatIcon } from "@angular/material/icon";
   styleUrl: './search-bar.component.css'
 })
 export class SearchBarComponent {
+  LeftIcon = input<boolean>(false);
  show = false;
 @ViewChild('wrapper') wrapper!: ElementRef;
 

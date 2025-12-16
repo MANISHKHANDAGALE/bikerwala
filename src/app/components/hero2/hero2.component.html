@@ -1,17 +1,17 @@
-<main class="relative mix-blend-difference w-full h-[450px]">
+<main class="relative w-full h-[450px]">
   <section class="opacity-70">
     <img src="get-final-price-banner.png" alt="">
   </section>
-  <section class="w-100 h-60 p-4  rounded-2xl  absolute top-25 left-70 hero2">
-    <div class="flex flex-col gap-4">
+  <section class="w-100 h-60 p-4  rounded-md  absolute top-25 left-69 hero2">
+    <div class="flex flex-col gap-6">
       <h1 class="text-[22px] font-bold">
        Check On-Road Price
       </h1>
-      <app-search-bar placeholder="Search Bike ..."/>
-      <div class="bg-transparent border border-white h-11 rounded-xl">
-        <div class="flex justify-between items-center m-2">
-          <input type="text" placeholder="Select City">
-          <mat-icon>arrow_right</mat-icon>
+      <app-search-bar [LeftIcon]="true" class="bg-(--bg-primary) rounded-md overflow-hidden"  placeholder="  Type To Select Bike Name,eg Royal Enfield"/>
+      <div class="bg-(--bg-primary)  h-11 rounded-md">
+        <div class="flex justify-between items-center my-0.5 mx-2.5">
+          <input type="text" class="outline-none" placeholder="Select City">
+          <button mat-icon-button><mat-icon class="mb-1">keyboard_arrow_right</mat-icon></button>
         </div>
       </div>
       <h3 class="text-[13px] font-bold">Check the on road price in your city</h3>
