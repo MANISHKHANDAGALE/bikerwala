@@ -30,7 +30,7 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./pages/brands/brands.component')
         .then(m => m.BrandsComponent),
-    canActivate: [authGuard]
+    // canActivate: [authGuard]
   },
   {
     path: '**',
