@@ -45,6 +45,15 @@ selectedBike(){
     alert("Please Enter Bike Name")
   }
 }
+selectedSearch(item:string){
+    this.router.navigate(['/bike-brand'],{
+    queryParams:{
+      bike : item
+    }
+    })
+    this.query = ''
+    this.close();
+}
 select(value: string) {
   this.query = value;
   this.onSearch(value);
