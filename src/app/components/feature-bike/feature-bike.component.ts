@@ -1,19 +1,18 @@
-import { NgClass, TitleCasePipe } from '@angular/common';
+import { NgClass, TitleCasePipe, UpperCasePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { SliderComponent } from "../slider/slider.component";
 import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core"
+import { BikeService } from '../../services/bike.service';
 
 @Component({
   selector: 'app-feature-bike',
-  imports: [NgClass, TitleCasePipe, SliderComponent],
+  imports: [NgClass, SliderComponent, UpperCasePipe],
   templateUrl: './feature-bike.component.html',
   styleUrl: './feature-bike.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class FeatureBikeComponent {
 
-  slidesPerView = 3;
-  spaceBetween = 10;
   loop = true;
   navigation = true;
   breakpoints = {
@@ -22,9 +21,22 @@ export class FeatureBikeComponent {
     1250: { slidesPerView: 3, spaceBetween: 10 }
   };
 
-  categories = ["trending", "electric", "upcoming", "popular"]
+  categories = ["trending", "popular", "electric", "upcoming" ]
 
   selectedCategory = "trending"
+
+  bikes: any[] = []
+  loading = false;
+  error = '';
+
+  constructor(private bikeService: BikeService) {}
+
+  ngOnInit(){
+    console.log(this.bikeService.getBike().subscribe((data:any) => {
+      console.log(data.data)
+    }))
+  } 
+
 
   onCategorySelect(category: string){
      this.selectedCategory = category;

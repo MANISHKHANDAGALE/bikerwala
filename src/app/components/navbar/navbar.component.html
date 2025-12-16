@@ -1,32 +1,36 @@
-<nav class="bg-[#1A1A1A] text-[#D1D1D1]  border-b border-[#2a2a2a] z-100 h-14 w-full fixed">
+<nav class="bg-[#1A1A1A] text-[#D1D1D1]  border-b border-[#2a2a2a] z-100 h-14 w-full fixed top-0 left-0">
   <div class="flex items-center justify-between w-full  p-2">
     <div class="flex items-center  gap-2">
       <button id="menu" (click)="togglemenu()" class="bg-gray-800" mat-icon-button>
         <fa-icon class="flex justify-center" [icon]="faBar"></fa-icon>
       </button>
       <!-- <h1 class="mb-1 text-2xl">Bikewale</h1> -->
-       <img src="bikewale-logo-new-header.svg" class="w-32 h-full invert object-cover "  alt="">
+       <img routerLink="/" src="bikewale-logo-new-header.svg" class="w-32 h-full invert object-cover cursor-pointer "  alt="">
     </div>
     <div class="flex items-center   gap-4  ">
-      <app-search-bar class="md:block hidden" [placeholder]="'Search ...'" [width]="'320px'"/>
+      <app-search-bar class="md:block hidden" [placeholder]="'Search'" [width]="'321.6px'"/>
        <div class="md:hidden block ">
-         <button  mat-icon-button>
+         <button routerLink="/"  mat-icon-button>
            <fa-icon class="text-white! flex justify-center md:ml-0 ml-20" [icon]="faMagnifyingGlass"></fa-icon>
          </button>
        </div>
-      <button mat-icon-button>
+      <button routerLink="/"  mat-icon-button>
         <fa-icon class="text-white! flex justify-center md:ml-0 ml-20" [icon]="faLocationDot"></fa-icon>
       </button>
-      <button mat-icon-button>
+      <button routerLink="/"  mat-icon-button>
         <fa-icon class="text-white! flex justify-center md:block hidden" [icon]="faLanguage"></fa-icon>
       </button>
-      <h1 class="text-lg md:block hidden">Login</h1>
+      <button class="bg-(--accent-primary) p-1 px-3 rounded-2xl text-white">
+        <h1 routerLink="/signIn" class="text-lg  cursor-pointer">Login</h1>
+      </button>
     </div>
   </div>
 </nav>
-<div  class="w-75 h-full bg-[#1A1A1A] text-[#D1D1D1] rounded-tr-2xl fixed top-14 -left-75 z-90  sidebar ">
+<div (click)="close()" class="overlay w-full h-full bg-black/75 text-[#D1D1D1] rounded-tr-2xl fixed top-14 left-0 opacity-0 hidden z-90">
+</div>
+<div class=" fixed top-0 w-75 h-full -left-75 z-100 bg-[#1A1A1A] sidebar">
   @for (item of menu; track item) {
-      <div (click)="togglediv(item)" class="flex items-center justify-between cursor-pointer hover:bg-white rounded-2xl hover:text-[#1A1A1A] p-4">
+      <div (click)="togglediv(item)" class="flex items-center justify-between cursor-pointer hover:bg-white rounded-2xl hover:text-[#1A1A1A] sidebar p-4">
       <div class="flex items-center gap-4">
         <mat-icon>{{item.icon}}</mat-icon>
         <h2>{{item.label}}</h2>

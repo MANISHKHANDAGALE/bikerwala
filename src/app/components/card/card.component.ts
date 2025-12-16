@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './card.component.css'
 })
 export class CardComponent {
-  @Input() tailwindCSS: string = ''
+  @Input() tailwindClass: string = ''
 
   @Output() onClick = new EventEmitter<void>()
 }

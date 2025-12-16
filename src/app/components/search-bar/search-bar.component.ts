@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, effect, input, signal } from '@angular/core';
+import { Component, effect, ElementRef, HostListener, input, signal, ViewChild } from '@angular/core';
 import {MatIconButton ,MatButtonModule} from '@angular/material/button';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
@@ -12,10 +12,30 @@ import { MatIcon } from "@angular/material/icon";
   styleUrl: './search-bar.component.css'
 })
 export class SearchBarComponent {
-  show=false
-   toggleShow(){
-    this.show=!this.show
+  LeftIcon = input<boolean>(false);
+ show = false;
+@ViewChild('wrapper') wrapper!: ElementRef;
+
+@HostListener('document:click', ['$event'])
+handleOutsideClick(event: MouseEvent) {
+  if (!this.wrapper.nativeElement.contains(event.target)) {
+    this.close();
   }
+}
+
+open() {
+  this.show = true;
+}
+
+close() {
+  this.show = false;
+}
+
+select(value: string) {
+  this.query = value;
+  this.onSearch(value);
+  // this.close();
+}
  faMagnifyingGlass=faMagnifyingGlass
  query = ''
  suggestions = signal<string[]>([])
@@ -49,9 +69,10 @@ export class SearchBarComponent {
       ...BIKE_SEARCH_DATA.engineCCRanges,
       ...BIKE_SEARCH_DATA.priceRanges
     ]
-    this.suggestions.set(data.filter((item)=> item.toLowerCase().includes(term)).slice(0,8))
+    this.suggestions.set(data.filter((item)=> item.toLowerCase().includes(term)).slice(0,5))
     console.log("searched :",this.suggestions())
     console.log(" recent searched :",this.recentSearch)
-  },1000)
+    this.recentSearch = this.recentSearch.filter((i)=> i !== '').slice(0,5)
+  },500)
  }
 }

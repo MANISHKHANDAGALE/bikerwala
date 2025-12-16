@@ -1,27 +1,29 @@
-<div [ngStyle] = "{width: width()}" class="relative">
-  <div class=" border border-(--text-primary) text-(--text-primary) rounded-xl">
-    <div class=" flex items-center justify-between  px-2 ">
-      <input #searchBox (input)="onSearch(searchBox.value)" (click)="toggleShow()" class="outline-none w-full p-1" type="text" name="" [placeholder]="placeholder()" [value]="query" id="">
+<div  #wrapper [ngStyle] = "{width: width()}" class="relative bg-(--bg-primary)">
+  <div class=" border border-[#BABABA] text-(--text-primary) rounded-md">
+    <div [class]="LeftIcon()?'flex flex-row-reverse':'flex'" class="items-center justify-between  px-2 ">
+      <input #searchBox (input)="onSearch(searchBox.value)" (focus)="open()" class="outline-none w-full p-1 text-[16px]" type="text" name="" [placeholder]="placeholder()" [value]="query" id="">
       <button mat-icon-button>
       <fa-icon class="text-white! flex justify-center" [icon]="faMagnifyingGlass" />
       </button>
     </div>
   </div>
   @if (show) {
-    <div class="bg-white text-black absolute top-full w-full left-0 rounded-2xl mt-1 z-90">
+    <div class="bg-(--bg-primary) text-(--text-primary) absolute top-full w-full left-0 rounded-2xl mt-1 z-90" (mousedown)="$event.preventDefault()">
       <div class="m-1">
-        <h1>Recent Searched</h1>
+        <h1 class="m-2 text-lg font-bold">Recent Searched</h1>
         @for (item of recentSearch; track item) {
-          <div  class="flex items-center  mx-8 cursor-pointer gap-4">
-            <mat-icon >access_time</mat-icon>
-            <h1 (click)="onSearch(item)" class="text-xl mb-1">{{item}}</h1>
+          <div  class="flex items-center overflow-hidden cursor-pointer gap-4">
+            <button mat-icon-button>
+              <mat-icon class="mb-1" >access_time</mat-icon>
+            </button>
+            <h1 (click)="select(item)" class="text-xl mb-1 truncate">{{item}}</h1>
             <button (click)="delete(item)"  mat-icon-button><mat-icon class="flex justify-center mb-4" >delete</mat-icon></button>
           </div>
         }
       </div>
       @for (item of suggestions(); track item) {
-        <div class="flex flex-col items-center rounded-xl  px-4 py-2 cursor-pointer hover:bg-gray-200">
-          <a class="text-black! ">{{item}}</a>
+        <div class="flex flex-col items-center rounded-xl  px-4 py-2 cursor-pointer" (click)="select(item)">
+          <a class="text-white! w-full ">{{item}}</a>
         </div>
       }
     </div>

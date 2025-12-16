@@ -1,14 +1,14 @@
-<div class="w-full bg-[#1A1A1A] font-sans py-6">
+<div class="w-full  font-sans py-6">
   <!-- MAIN CENTERED COLUMN -->
-  <div class="max-w-4xl mx-auto px-4 sm:px-6">
+  <div class="max-w-[992px]  mx-auto px-4 sm:px-6">
 
     <!-- Title -->
-    <h1 class="font-bold text-[20px] sm:text-[22px] text-[#E8E8E8] mb-5">
+    <h1 class="font-bold text-[22px] sm:text-[22px] text-[#E8E8E8] mb-2">
       Featured Bikes
     </h1>
 
     <!-- Categories -->
-    <div class="lg:mb-8 ">
+    <div class="lg:mb-8  ">
       <div class="flex flex-wrap lg:gap-4 ">
         @for (category of categories; track category) {
           <button
@@ -16,11 +16,11 @@
             class="px-4 py-2 text-sm font-medium cursor-pointer "
             [ngClass]="
               selectedCategory === category
-                ? 'text-[#91D9D3] border-b-2 border-[#91D9D3]'
+                ? 'text-[#91D9D3] border-b-4 border-[#91D9D3]'
                 : 'text-[#D1D1D1] hover:text-white'
             "
           >
-            {{ category | titlecase }}
+            {{ category | uppercase }}
           </button>
         }
       </div>
@@ -31,22 +31,20 @@
 
     <!-- Slider -->
     <app-slider
-      [slidesPerView]="slidesPerView"
-      [spaceBetween]="spaceBetween"
       [navigation]="navigation"
       [breakpoints]="breakpoints"
-      containerClass="w-full h-60 mt-6 rounded-md"
+      containerClass="w-full h-full mt-3 rounded-md"
     >
       @for (slide of slides; track slide.id) {
         <swiper-slide>
-          <div class="h-full rounded-2xl flex items-center justify-center bg-gray-700 p-4">
+          <div class="h-[334.344px] rounded-2xl flex items-center justify-center bg-[#252525] text-[#E8E8E8] ">
             <app-card
               tailwindClass="p-4 bg-white text-black rounded-lg shadow-md w-full max-w-xs"
             >
               <h2 class="text-lg font-bold mb-2">
                 {{ slide.title }}
               </h2>
-              <p class="text-sm text-gray-700">
+              <p class="text-sm text-[#D9D9D9]">
                 {{ slide.description }}
               </p>
             </app-card>

@@ -1,11 +1,11 @@
-import { TitleCasePipe } from '@angular/common';
+import { UpperCasePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { BIKE_SEARCH_DATA } from '../../dummy-data';
 
 @Component({
   selector: 'app-browse-bike',
-  imports: [TitleCasePipe, NgClass],
+  imports: [UpperCasePipe, NgClass],
   templateUrl: './browse-bike.component.html',
   styleUrl: './browse-bike.component.css'
 })

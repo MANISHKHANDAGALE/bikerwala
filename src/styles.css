@@ -1,5 +1,9 @@
 /* Tailwind */
 @import "tailwindcss";
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+
 
 /* =========================
    ROOT THEME VARIABLES
@@ -14,15 +18,15 @@
   --text-secondary: #cfcfcf;   /* muted text */
   --text-tertiary: #9a9a9a;
 
-  --accent-primary: #ff2d2d;   /* red accent */
+  --accent-primary: #EF4848;   /* red accent */
   --accent-hover: #ff4d4d;
   --accent-soft: rgba(255, 45, 45, 0.15);
 
-  --border-color: #2a2a2a;
+  --border-color: #6A6A6A;
 
   /* Typography */
-  --font-primary: "Open Sans", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-heading: "Lato", system-ui, sans-serif;
+    --font-primary: "Lato", sans-serif;
+  --font-heading: "Lato", sans-serif;
 
   /* Sizes */
   --radius-sm: 6px;
@@ -43,11 +47,6 @@
    /* ============================= */
 /* Swiper default navigation */
 /* ============================= */
-
-@import 'swiper/css';
-@import 'swiper/css/navigation';
-@import 'swiper/css/pagination';
-
 
 .swiper-button-next,
 .swiper-button-prev {
@@ -106,19 +105,6 @@ html {
   line-height: 1.5;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
-}
-
-body {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  min-height: 100%;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  font-family: var(--font-primary);
-  font-size: 14px;
-  -webkit-overflow-scrolling: touch;
-  overflow-x: hidden;
 }
 
 /* =========================
@@ -217,5 +203,6 @@ body {
   font-family: var(--font-primary);
   font-size: 14px;
   overflow-x: hidden;
+  border-color: var(--border-color) ;
 }
 

@@ -5,9 +5,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faBars,faLocationDot,faLanguage, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { SearchBarComponent } from "../search-bar/search-bar.component";
 import gsap from 'gsap'
+import { RouterLink } from "@angular/router";
 @Component({
   selector: 'app-navbar',
-  imports: [MatIconModule, MatIconButton, FontAwesomeModule, SearchBarComponent],
+  imports: [MatIconModule, MatIconButton, FontAwesomeModule, SearchBarComponent, RouterLink],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
@@ -70,15 +71,24 @@ export class NavbarComponent implements AfterViewInit {
    faLanguage=faLanguage
    ngAfterViewInit() {
     this.t1 = gsap.timeline({paused:true})
-    this.t1.to('.sidebar',{
-      left:0,
-      duration:0.8,
-      ease:'power1.in'
+    this.t1.to('.overlay',{
+      display:'block',
+      opacity:100,
+      duration:0.5,
+      ease:'back.in'
+    })
+     this.t1.to('.sidebar',{
+      duration:0.1,
+      ease:'power3.in',
+      left:0
     })
     this.t1.reverse();
 
 }
 togglemenu() {
   this.t1.reversed(!this.t1.reversed())
+}
+close(){
+  this.t1.reverse()
 }
 }
