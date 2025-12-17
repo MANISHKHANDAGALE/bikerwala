@@ -19,9 +19,10 @@ export const authGuard: CanActivateFn = () => {
   if(authService.isLoggedIn()){
     return true;
   }
-  alert("Please Login First")
+
   authService.removeToken();
   router.navigate(['/signIn']);
+  alert("Please Login First")
   return false;
 };
 
