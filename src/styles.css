@@ -23,9 +23,11 @@
   --accent-soft: rgba(255, 45, 45, 0.15);
 
   --border-color: #6A6A6A;
-
+  --footer-color: #002B51;
+  --sidebar-color:#D1D1D1;
+  --card-bg-color:#252525;
   /* Typography */
-    --font-primary: "Lato", sans-serif;
+  --font-primary: "Lato", sans-serif;
   --font-heading: "Lato", sans-serif;
 
   /* Sizes */

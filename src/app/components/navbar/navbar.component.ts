@@ -74,14 +74,18 @@ export class NavbarComponent implements AfterViewInit {
     this.t1.to('.overlay',{
       display:'block',
       opacity:100,
-      duration:0.5,
+      duration:0.3,
       ease:'back.in'
     })
-     this.t1.to('.sidebar',{
-      duration:0.1,
-      ease:'power3.in',
-      left:0
-    })
+     this.t1.fromTo('.sidebar',{
+     x:'-100%'
+    },{
+      x: '0%',
+      delay:0.1,
+      duration: 0.5,
+      ease: 'power3.out',
+      left:0,
+    },'<')
     this.t1.reverse();
 
 }

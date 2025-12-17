@@ -8,20 +8,16 @@
     </h1>
 
     <!-- Categories -->
-    <div class="lg:mb-8  ">
+    <div class="lg:mb-8 ">
       <div class="flex flex-wrap lg:gap-4 ">
         @for (category of categories; track category) {
-          <button
-            (click)="onCategorySelect(category)"
-            class="px-4 py-2 text-sm font-medium cursor-pointer "
-            [ngClass]="
+        <button (click)="onCategorySelect(category)" class="px-4 py-2 text-sm font-medium cursor-pointer " [ngClass]="
               selectedCategory === category
                 ? 'text-[#91D9D3] border-b-4 border-[#91D9D3]'
                 : 'text-[#D1D1D1] hover:text-white'
-            "
-          >
-            {{ category | uppercase }}
-          </button>
+            ">
+          {{ category | uppercase }}
+        </button>
         }
       </div>
 
@@ -30,27 +26,42 @@
     </div>
 
     <!-- Slider -->
-    <app-slider
-      [navigation]="navigation"
-      [breakpoints]="breakpoints"
-      containerClass="w-full h-full mt-3 rounded-md"
-    >
-      @for (slide of slides; track slide.id) {
-        <swiper-slide>
-          <div class="h-[334.344px] rounded-2xl flex items-center justify-center bg-[#252525] text-[#E8E8E8] ">
-            <app-card
-              tailwindClass="p-4 bg-white text-black rounded-lg shadow-md w-full max-w-xs"
-            >
-              <h2 class="text-lg font-bold mb-2">
-                {{ slide.title }}
+    <app-slider [navigation]="navigation" [breakpoints]="breakpoints" containerClass="w-full h-full mt-3 rounded-md">
+      @for (bike of filteredBikes; track bike.id) {
+      <swiper-slide>
+        <div class="flex justify-center" >
+          <!-- CARD -->
+          <div class="w-[334.629px] h-[333.516px] bg-(--card-bg-color) rounded-2xl p-4 flex flex-col justify-between
+               border border-[#252525] cursor-pointer" [routerLink]="['/brand', bike.brand, bike.id]" >
+            <div class="w-full h-[150px] flex items-center justify-center">
+              <img [src]="bike.imageUrl" class="max-h-full object-contain scale-130"  />
+            </div>
+
+            <div>
+              <h2 class="text-[15px] font-semibold text-[#E8E8E8]">
+                {{ bike.title }}
               </h2>
-              <p class="text-sm text-[#D9D9D9]">
-                {{ slide.description }}
+
+              <p class="text-[16px] text-[#E8E8E8] font-bold mt-1">
+                ₹ {{ bike.price  }}
+                <span class="text-[11px] text-[#D1D1D1]">Onwards</span>
               </p>
-            </app-card>
+
+              <p class="text-[11px] text-gray-400">
+                Avg. Ex-Showroom price
+              </p>
+            </div>
+
+            <button class="w-[158px]   py-2 text-center rounded-xl text-[14px]
+                 border border-[#5EEAD4] text-[#5EEAD4]
+                 ">
+              Check on-road price
+            </button>
           </div>
-        </swiper-slide>
+        </div>
+      </swiper-slide>
       }
+
     </app-slider>
 
   </div>

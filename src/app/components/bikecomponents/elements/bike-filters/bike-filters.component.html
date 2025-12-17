@@ -1,0 +1,29 @@
+<div
+  class="mt-6 bg-[#1b1b1b] rounded-xl p-4
+         flex items-center justify-between
+         border border-white/10"
+>
+
+  <!-- Left: Filters -->
+  <div class="flex items-center gap-4 flex-wrap">
+
+    <!-- Filter Label -->
+    <div class="flex items-center gap-2 text-white font-medium">
+      <i class="fa-solid fa-filter text-gray-400 text-sm"></i>
+      Filter By
+    </div>
+
+    <!-- Filter Buttons -->
+    <button class="filter-btn">Budget</button>
+    <button class="filter-btn">Body Style</button>
+    <button class="filter-btn">Mileage</button>
+    <button class="filter-btn flex items-center gap-1">
+      More Filter
+      <i class="fa-solid fa-chevron-right text-xs"></i>
+    </button>
+  </div>
+
+  <!-- Right: Sort -->
+  <app-sort-dropdown></app-sort-dropdown>
+
+</div>
