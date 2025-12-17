@@ -24,6 +24,8 @@
     "@fortawesome/free-brands-svg-icons": "^7.1.0",
     "@fortawesome/free-regular-svg-icons": "^7.1.0",
     "@fortawesome/free-solid-svg-icons": "^7.1.0",
+    "@ngneat/overview": "6.1.1",
+    "@ngxpert/hot-toast": "^4.2.0",
     "@tailwindcss/postcss": "^4.1.18",
     "gsap": "^3.14.2",
     "postcss": "^8.5.6",
