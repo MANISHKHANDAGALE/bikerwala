@@ -24,7 +24,8 @@
 
   --border-color: #6A6A6A;
   --footer-color: #002B51;
-
+  --sidebar-color:#D1D1D1;
+  --card-bg-color:#252525;
   /* Typography */
   --font-primary: "Lato", sans-serif;
   --font-heading: "Lato", sans-serif;
@@ -205,5 +206,45 @@ body {
   font-size: 14px;
   overflow-x: hidden;
   border-color: var(--border-color) ;
+}
+
+
+/* filter Css change By Vivek*/
+/* =========================
+   BIKE FILTER PILLS
+   ========================= */
+
+.filter-pill {
+  padding: 0.45rem 1rem;
+  font-size: 14px;
+  color: var(--text-primary);
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.filter-pill:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+/* =========================
+   SORT PILL
+   ========================= */
+
+.sort-pill {
+  padding: 0.45rem 1rem;
+  font-size: 14px;
+  color: var(--text-primary);
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.sort-pill:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
 }
 

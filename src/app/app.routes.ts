@@ -4,6 +4,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { BikeBrandDetailsComponent } from './pages/bike-brand-details/bike-brand-details.component';
 import { BikeBrandListComponent } from './pages/bike-brand-list/bike-brand-list.component';
 import { authGuard } from './guards/auth.guard';
+import { RoyalEnfieldComponent } from './components/bikecomponents/royal-enfield/royal-enfield.component';
 
 
 export const routes: Routes = [

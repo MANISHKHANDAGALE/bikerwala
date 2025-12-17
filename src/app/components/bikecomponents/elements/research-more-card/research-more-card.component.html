@@ -1,19 +1,25 @@
 <app-card
   [tailwindClass]="
-    'bg-[#1b1b1b] rounded-xl border border-white/10 p-4'
+    'p-4
+     bg-[var(--bg-secondary)]
+     border border-[var(--border-color)]
+     rounded-[var(--radius-md)]'
   "
 >
+
   <h3 class="text-white font-semibold text-lg mb-3">
     Research More
   </h3>
 
-  <div class="divide-y divide-white/10">
-    <div
-      *ngFor="let link of links"
-      class="py-3 text-cyan-400 text-sm
-             cursor-pointer hover:underline"
-    >
-      {{ link }}
-    </div>
+  <div class="divide-y divide-[var(--border-color)]">
+  <div
+    *ngFor="let link of links"
+    class="py-3 text-sm
+           text-[var(--accent-primary)]
+           cursor-pointer hover:underline"
+  >
+    {{ link }}
   </div>
+</div>
+
 </app-card>
