@@ -1,6 +1,8 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { authGuard } from './guards/auth.guard';
+import SignUpComponent from './components/sign-up/sign-up.component';
+import SignInComponent from './components/sign-in/sign-in.component';
 
 
 export const routes: Routes = [
@@ -11,11 +13,11 @@ export const routes: Routes = [
   },
   {
     path:'signIn',
-    loadComponent:() => import('./components/sign-in/sign-in.component')
+    component:SignInComponent,
   },
   {
     path:'signUp',
-    loadComponent:() => import('./components/sign-up/sign-up.component')
+    component:SignUpComponent,
   },
   {
     path: 'brand/:brandId/:brandbike',
