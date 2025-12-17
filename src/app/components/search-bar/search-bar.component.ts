@@ -33,7 +33,7 @@ close() {
 }
 selectedBike(){
   if(this.query !== ''){
-    this.router.navigate(['/bike-brand'],{
+    this.router.navigate(['/brand/bikebrand'],{
     queryParams:{
       bike : this.query
     }
@@ -44,6 +44,15 @@ selectedBike(){
   else{
     alert("Please Enter Bike Name")
   }
+}
+selectedSearch(item:string){
+    this.router.navigate(['/brand/bikebrand'],{
+    queryParams:{
+      bike : item
+    }
+    })
+    this.query = ''
+    this.close();
 }
 select(value: string) {
   this.query = value;

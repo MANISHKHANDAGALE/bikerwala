@@ -14,7 +14,7 @@ import { FooterComponent } from "../../footer/footer.component";
   templateUrl: './royal-enfield.component.html',
   styleUrl: './royal-enfield.component.css'
 })
-export class RoyalEnfieldComponent {
+export default class RoyalEnfieldComponent {
 
   bikes = [
   {

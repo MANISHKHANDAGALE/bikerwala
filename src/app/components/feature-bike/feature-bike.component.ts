@@ -1,12 +1,13 @@
-import { NgClass, TitleCasePipe, UpperCasePipe } from '@angular/common';
+import { CurrencyPipe, NgClass, UpperCasePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { SliderComponent } from "../slider/slider.component";
 import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core"
-import { BikeService } from '../../services/bike.service';
+import { Prodcuts, productsList } from '../../data/data';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-feature-bike',
-  imports: [NgClass, SliderComponent, UpperCasePipe],
+  imports: [NgClass, SliderComponent, UpperCasePipe, RouterLink ],
   templateUrl: './feature-bike.component.html',
   styleUrl: './feature-bike.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
@@ -21,78 +22,73 @@ export class FeatureBikeComponent {
     1250: { slidesPerView: 3, spaceBetween: 10 }
   };
 
-  categories = ["trending", "popular", "electric", "upcoming" ]
+  categories = ['trending', 'popular', 'electric', 'upcoming'];
 
-  selectedCategory = "trending"
+  selectedCategory: string = 'trending';
 
-  bikes: any[] = []
-  loading = false;
-  error = '';
+  bikes: Prodcuts[] = productsList;
 
-  constructor(private bikeService: BikeService) {}
+  /* 🔹 Cached filtered list */
+  get filteredBikes(): Prodcuts[] {
+    return this.bikes.filter(bike =>
+      bike.tags?.includes(this.selectedCategory)
+    );
+  }
 
-  ngOnInit(){
-    console.log(this.bikeService.getBike().subscribe((data:any) => {
-      console.log(data.data)
-    }))
-  } 
-
-
-  onCategorySelect(category: string){
-     this.selectedCategory = category;
-     console.log(this.selectedCategory)
+  onCategorySelect(category: string) {
+    this.selectedCategory = category;
   }
 
 
-  slides = [
-    {
-      id: 1,
-      title: 'slide 1',
-      description: "This is the description for slide 1"
+  // slides = [
+  //   {
+  //     id: 1,
+  //     title: 'slide 1',
+  //     description: "This is the description for slide 1"
 
-    },
-    {
-      id: 2,
-      title: 'slide 2',
-      description: "This is the description for slide 2"
+  //   },
+  //   {
+  //     id: 2,
+  //     title: 'slide 2',
+  //     description: "This is the description for slide 2"
 
-    },
-    {
-      id: 3,
-      title: 'slide 3',
-      description: "This is the description for slide 3"
+  //   },
+  //   {
+  //     id: 3,
+  //     title: 'slide 3',
+  //     description: "This is the description for slide 3"
 
-    },
-    {
-      id: 4,
-      title: 'slide 4',
-      description: "This is the description for slide 4"
+  //   },
+  //   {
+  //     id: 4,
+  //     title: 'slide 4',
+  //     description: "This is the description for slide 4"
 
-    },
-    {
-      id: 4,
-      title: 'slide 4',
-      description: "This is the description for slide 4"
+  //   },
+  //   {
+  //     id: 4,
+  //     title: 'slide 4',
+  //     description: "This is the description for slide 4"
 
-    },
-    {
-      id: 4,
-      title: 'slide 4',
-      description: "This is the description for slide 4"
+  //   },
+  //   {
+  //     id: 4,
+  //     title: 'slide 4',
+  //     description: "This is the description for slide 4"
 
-    },
-    {
-      id: 4,
-      title: 'slide 4',
-      description: "This is the description for slide 4"
+  //   },
+  //   {
+  //     id: 4,
+  //     title: 'slide 4',
+  //     description: "This is the description for slide 4"
 
-    },
-    {
-      id: 4,
-      title: 'slide 4',
-      description: "This is the description for slide 4"
+  //   },
+  //   {
+  //     id: 4,
+  //     title: 'slide 4',
+  //     description: "This is the description for slide 4"
 
-    },
-  ]
+  //   },
+  // ]
 }
 
