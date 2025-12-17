@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, map } from 'rxjs';
+import { Observable, catchError, map, of, tap } from 'rxjs';
 
+export interface LoginResponse {
+  token: string;
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -10,11 +13,30 @@ export class AuthService {
   private API = 'https://auth-backend-liart.vercel.app';
 
   constructor(private http: HttpClient) {}
-
-  signin(data: any) {
-    return this.http.post(`${this.API}/auth/signin`, data, {
+  // token handling
+  setToken(token:string){
+  localStorage.setItem('token',token)
+  }
+  getToken():null|string{
+   return localStorage.getItem('token')
+  }
+  removeToken(){
+    localStorage.removeItem('token')
+  }
+  isLoggedIn():boolean{
+    return !!this.getToken();
+  }
+  // auth logic
+  signin(email: string, password: string) {
+    return this.http.post<LoginResponse>(`${this.API}/auth/signin`, {password,email}, {
       withCredentials: true
-    });
+    }).pipe(
+      tap(res => {
+        if(res?.token){
+          this.setToken(res.token)
+        }
+      })
+    )
   }
 
   signup(data: any) {
@@ -34,7 +56,8 @@ export class AuthService {
     return this.http.get<any>(`${this.API}/auth/me`, {
       withCredentials: true
     }).pipe(
-      map(res => res.authenticated === true)
+      map(res => res.authenticated === true),
+      catchError(()=> of(false))
     );
   }
 }
