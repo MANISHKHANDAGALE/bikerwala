@@ -27,6 +27,8 @@
               }
             ],
             "styles": [
+              "@ngxpert/hot-toast/styles.css",
+              "@ngxpert/hot-toast/styles.css",
               "node_modules/swiper/swiper-bundle.min.css",
               "@angular/material/prebuilt-themes/rose-red.css",
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
@@ -88,6 +90,8 @@
               }
             ],
             "styles": [
+              "@ngxpert/hot-toast/styles.css",
+              "@ngxpert/hot-toast/styles.css",
               "@angular/material/prebuilt-themes/rose-red.css",
               "src/styles.css"
             ],

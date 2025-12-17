@@ -1,11 +1,15 @@
+<h3 class="text-white font-semibold text-lg mb-4">
+  Brands Similar to Royal Enfield
+</h3>
 <app-card
   [tailwindClass]="
-    'bg-[#1b1b1b] rounded-xl border border-white/10 p-4'
-  "
+    'p-4 mb-2 
+     bg-[var(--card-bg-color)]
+     border border-[var(--border-color)]
+     rounded-[var(--radius-md)]'
+  " 
 >
-  <h3 class="text-white font-semibold text-lg mb-4">
-    Brands Similar to Royal Enfield
-  </h3>
+
 
   <!-- Brand Grid -->
   <div class="grid grid-cols-3 gap-4 text-center">
@@ -15,9 +19,10 @@
       class="space-y-2"
     >
       <div
-        class="bg-white rounded-md h-12
-               flex items-center justify-center p-2"
-      >
+  class="bg-(--card-bg-color) rounded-md h-12
+         flex items-center justify-center p-2"
+>
+
         <img
           [src]="brand.logo"
           [alt]="brand.name"
@@ -37,11 +42,13 @@
   </div>
 
   <!-- Footer CTA -->
-  <div
-    class="mt-4 pt-3 border-t border-white/10
-           text-center text-cyan-400 text-sm
-           cursor-pointer hover:underline"
-  >
-    View More Brands
-  </div>
+ <div
+  class="mt-4 pt-3 border-t border-(--border-color)
+         text-center text-sm
+         text-(--accent-primary)
+         cursor-pointer hover:underline"
+>
+  View More Brands
+</div>
+
 </app-card>

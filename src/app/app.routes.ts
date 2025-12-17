@@ -19,20 +19,27 @@ export const routes: Routes = [
     path:'signUp',
     component:SignUpComponent,
   },
-  // {
-  //   path: '/:brandId/:brandbike',
-  //   loadComponent: () =>
-  //     import('./pages/brand-bike/brand-bike.component')
-  //       .then(m => m.BrandBikeComponent),
-  //   // canActivate: [authGuard]
-  // },
-  // {
-  //   path: '/:brandId',
-  //   loadComponent: () =>
-  //     import('./pages/brands/brands.component')
-  //       .then(m => m.BrandsComponent),
-  //   // canActivate: [authGuard]
-  // },
+  {
+    path: ':brandId/:brandbike',
+    canActivate: [authGuard],
+    loadComponent: () =>
+      import('./pages/brands-bikes/brands-bikes.component')
+        .then(m => m.BrandsBikesComponent),
+
+  },
+   {
+    path:'bikebrand',
+    canActivate: [authGuard],
+    loadComponent:()=> import('./components/bikecomponents/royal-enfield/royal-enfield.component')
+   },
+  {
+    path: ':brandId',
+    canActivate: [authGuard],
+    loadComponent: () =>
+      import('./pages/brands/brands.component')
+        .then(m => m.BrandsComponent),
+    // canActivate: [authGuard]
+  },
   {
     path: '**',
     redirectTo: ''

@@ -32,8 +32,8 @@ export default class SignInComponent {
 
     this.loading = true;
     this.error = null;
-    const{email, password} = this.signInForm.value
-    this.authService.signin(email, password).subscribe({
+    const {email,password} = this.signInForm.value
+    this.authService.signin(email,password).subscribe({
       next: () => {
         this.router.navigate(['/']);
       },
@@ -43,5 +43,5 @@ export default class SignInComponent {
       }
     });
   }
-} 
+}
 

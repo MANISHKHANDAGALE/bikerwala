@@ -1,29 +1,100 @@
 <div
-  class="mt-6 bg-[#1b1b1b] rounded-xl p-4
-         flex items-center justify-between
-         border border-white/10"
+  class="w-full flex items-center justify-between
+         px-4 py-3
+         bg-(--card-bg-color)
+         border border-[#2a2a2a]
+         rounded-xl"
 >
 
-  <!-- Left: Filters -->
-  <div class="flex items-center gap-4 flex-wrap">
+  <!-- LEFT : FILTERS -->
+  <div class="flex flex-col gap-2">
 
-    <!-- Filter Label -->
-    <div class="flex items-center gap-2 text-white font-medium">
+    <!-- Filter Label (ABOVE buttons) -->
+    <div
+      class="flex items-center gap-2
+             text-sm font-medium text-white
+             whitespace-nowrap"
+    >
       <i class="fa-solid fa-filter text-gray-400 text-sm"></i>
-      Filter By
+      <span>Filter By</span>
     </div>
 
     <!-- Filter Buttons -->
-    <button class="filter-btn">Budget</button>
-    <button class="filter-btn">Body Style</button>
-    <button class="filter-btn">Mileage</button>
-    <button class="filter-btn flex items-center gap-1">
-      More Filter
-      <i class="fa-solid fa-chevron-right text-xs"></i>
-    </button>
+    <div class="flex items-center gap-3">
+      <button
+        class="px-4 py-1.5 text-sm text-white
+               border border-white
+               rounded-md
+               bg-(--bg-primary) 
+               hover:border-[#6dd3c8]
+               transition"
+      >
+        Budget
+      </button>
+
+      <button
+        class="px-4 py-1.5 text-sm text-white
+               border border-white
+               rounded-md
+               bg-(--bg-primary) 
+               hover:border-[#6dd3c8]
+               transition"
+      >
+        Body Style
+      </button>
+
+      <button
+        class="px-4 py-1.5 text-sm text-white
+               border border-white
+               rounded-md
+               bg-(--bg-primary) 
+               hover:border-[#6dd3c8]
+               transition"
+      >
+        Mileage
+      </button>
+
+      <button
+        class="px-4 py-1.5 text-sm text-white
+               border border-white
+               rounded-md
+               hover:border-[#6dd3c8]
+               transition
+               bg-(--bg-primary) 
+               flex items-center gap-1"
+      >
+        More Filter
+        <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+      </button>
+    </div>
+
   </div>
 
-  <!-- Right: Sort -->
-  <app-sort-dropdown></app-sort-dropdown>
+  <!-- RIGHT : SORT (UNCHANGED) -->
+  <div class="flex flex-col items-center gap-2">
+    <div
+      class="flex items-center gap-2
+             text-sm text-white
+             whitespace-nowrap"
+    >
+      <i class="fa-solid fa-arrow-up-wide-short text-gray-400 text-sm"></i>
+      <span>Sort by</span>
+    </div>
+
+
+    <button
+      class="px-4 py-1.5 text-sm text-white
+             border border-white
+             rounded-md
+             hover:border-[#6dd3c8]
+             transition
+             bg-(--bg-primary) 
+             flex items-center gap-1"
+    >
+      Popularity
+      <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+    </button>
+
+  </div>
 
 </div>

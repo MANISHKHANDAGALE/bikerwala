@@ -3,6 +3,8 @@
 @import 'swiper/css';
 @import 'swiper/css/navigation';
 @import 'swiper/css/pagination';
+@import "@flaticon/flaticon-uicons/css/all/all.css";
+
 
 
 /* =========================
@@ -206,5 +208,45 @@ body {
   font-size: 14px;
   overflow-x: hidden;
   border-color: var(--border-color) ;
+}
+
+
+/* filter Css change By Vivek*/
+/* =========================
+   BIKE FILTER PILLS
+   ========================= */
+
+.filter-pill {
+  padding: 0.45rem 1rem;
+  font-size: 14px;
+  color: var(--text-primary);
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.filter-pill:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+/* =========================
+   SORT PILL
+   ========================= */
+
+.sort-pill {
+  padding: 0.45rem 1rem;
+  font-size: 14px;
+  color: var(--text-primary);
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.sort-pill:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
 }
 
