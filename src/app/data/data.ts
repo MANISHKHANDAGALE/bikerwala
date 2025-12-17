@@ -15,6 +15,7 @@ export interface Prodcuts {
     /* 🔹 Added fields (no breaking changes) */
 
     id?: number;
+    stars?: number
 
     fuelType?: 'petrol' | 'electric' | 'cng';
     bikeType?: 'commuter' | 'sports' | 'cruiser' | 'adventure' | 'scooter' | 'tourer';
@@ -32,6 +33,10 @@ export interface Prodcuts {
     launchStatus?: 'launched' | 'upcoming';
 
     tags?: string[];        // trending, popular, electric, budget etc.
+
+    kerbWeight?: number;   // in kg
+    seatHeight?: number;   // in mm
+    fuelTankCapacity?: number | null
 }
 
 
@@ -666,81 +671,81 @@ export interface BrandName {
 
 export const brands: BrandName[] = [
 
-  { id: 1, imageUrl: bajajLogo, label: 'Bajaj' },
-  { id: 2, imageUrl: ktmLogo, label: 'KTM' },
-  { id: 3, imageUrl: royalEnfieldLogo, label: 'Royal Enfield' },
-  { id: 4, imageUrl: kawasakiLogo, label: 'Kawasaki' },
-  { id: 5, imageUrl: heroLogo, label: 'Hero' },
-  { id: 6, imageUrl: hondaLogo, label: 'Honda' },
-  { id: 7, imageUrl: suzukiLogo, label: 'Suzuki' },
-  { id: 8, imageUrl: tvsLogo, label: 'TVS' },
-  { id: 9, imageUrl: triumphLogo, label: 'Triumph' },
-  { id: 10, imageUrl: yamahaLogo, label: 'Yamaha' },
+    { id: 1, imageUrl: bajajLogo, label: 'Bajaj' },
+    { id: 2, imageUrl: ktmLogo, label: 'KTM' },
+    { id: 3, imageUrl: royalEnfieldLogo, label: 'Royal Enfield' },
+    { id: 4, imageUrl: kawasakiLogo, label: 'Kawasaki' },
+    { id: 5, imageUrl: heroLogo, label: 'Hero' },
+    { id: 6, imageUrl: hondaLogo, label: 'Honda' },
+    { id: 7, imageUrl: suzukiLogo, label: 'Suzuki' },
+    { id: 8, imageUrl: tvsLogo, label: 'TVS' },
+    { id: 9, imageUrl: triumphLogo, label: 'Triumph' },
+    { id: 10, imageUrl: yamahaLogo, label: 'Yamaha' },
 
-  { id: 11, imageUrl: `${baseUrl}/bikerwala_assets/brands/ampere.avif`, label: 'Ampere' },
-  { id: 12, imageUrl: apriliaLogo, label: 'Aprilia' },
+    { id: 11, imageUrl: amperelogo, label: 'Ampere' },
+    { id: 12, imageUrl: apriliaLogo, label: 'Aprilia' },
 
-  { id: 13, imageUrl: benelliLogo, label: 'Benelli' },
-  { id: 14, imageUrl: bmwLogo, label: 'BMW' },
-  { id: 15, imageUrl: bsaLogo, label: 'BSA' },
-  { id: 16, imageUrl: bgaussLogo, label: 'Bgauss' },
-  { id: 17, imageUrl: bounceLogo, label: 'Bounce' },
-  { id: 18, imageUrl: brixtonLogo, label: 'Brixton' },
+    { id: 13, imageUrl: benelliLogo, label: 'Benelli' },
+    { id: 14, imageUrl: bmwLogo, label: 'BMW' },
+    { id: 15, imageUrl: bsaLogo, label: 'BSA' },
+    { id: 16, imageUrl: bgaussLogo, label: 'Bgauss' },
+    { id: 17, imageUrl: bounceLogo, label: 'Bounce' },
+    { id: 18, imageUrl: brixtonLogo, label: 'Brixton' },
 
-  { id: 19, imageUrl: cfmotoLogo, label: 'Cfmoto' },
-  { id: 20, imageUrl: ducatiLogo, label: 'Ducati' },
+    { id: 19, imageUrl: cfmotoLogo, label: 'Cfmoto' },
+    { id: 20, imageUrl: ducatiLogo, label: 'Ducati' },
 
-  { id: 21, imageUrl: evoletLogo, label: 'Evolet' },
-  { id: 22, imageUrl: ferratoLogo, label: 'Ferrato' },
-  { id: 23, imageUrl: gemopaiLogo, label: 'Gemopai' },
+    { id: 21, imageUrl: evoletLogo, label: 'Evolet' },
+    { id: 22, imageUrl: ferratoLogo, label: 'Ferrato' },
+    { id: 23, imageUrl: gemopaiLogo, label: 'Gemopai' },
 
-  { id: 24, imageUrl: harleyDavidsonLogo, label: 'Harley-Davidson' },
+    { id: 24, imageUrl: harleyDavidsonLogo, label: 'Harley-Davidson' },
 
-  { id: 25, imageUrl: hopElectricLogo, label: 'Hop Electric' },
+    { id: 25, imageUrl: hopElectricLogo, label: 'Hop Electric' },
 
-  { id: 26, imageUrl: husqvarnaLogo, label: 'Husqvarna' },
-  { id: 27, imageUrl: indianLogo, label: 'Indian' },
-  { id: 28, imageUrl: ivoomiLogo, label: 'Ivoomi' },
+    { id: 26, imageUrl: husqvarnaLogo, label: 'Husqvarna' },
+    { id: 27, imageUrl: indianLogo, label: 'Indian' },
+    { id: 28, imageUrl: ivoomiLogo, label: 'Ivoomi' },
 
-  { id: 29, imageUrl: jawaLogo, label: 'Jawa' },
-  { id: 30, imageUrl: joyEBikeLogo, label: 'Joy Ebike' },
+    { id: 29, imageUrl: jawaLogo, label: 'Jawa' },
+    { id: 30, imageUrl: joyEBikeLogo, label: 'Joy Ebike' },
 
-  { id: 31, imageUrl: keewayLogo, label: 'Keeway' },
-  { id: 32, imageUrl: kineticLogo, label: 'Kinetic' },
-  { id: 33, imageUrl: kineticGreenLogo, label: 'Kinetic Green' },
+    { id: 31, imageUrl: keewayLogo, label: 'Keeway' },
+    { id: 32, imageUrl: kineticLogo, label: 'Kinetic' },
+    { id: 33, imageUrl: kineticGreenLogo, label: 'Kinetic Green' },
 
-  { id: 34, imageUrl: lambrettaLogo, label: 'Lambretta' },
-  { id: 35, imageUrl: lectrixLogo, label: 'Lectrix' },
+    { id: 34, imageUrl: lambrettaLogo, label: 'Lambretta' },
+    { id: 35, imageUrl: lectrixLogo, label: 'Lectrix' },
 
-  { id: 36, imageUrl: matterLogo, label: 'Matter' },
-  { id: 37, imageUrl: motoGuzziLogo, label: 'Moto Guzzi' },
-  { id: 38, imageUrl: motoMoriniLogo, label: 'Moto Morini' },
+    { id: 36, imageUrl: matterLogo, label: 'Matter' },
+    { id: 37, imageUrl: motoGuzziLogo, label: 'Moto Guzzi' },
+    { id: 38, imageUrl: motoMoriniLogo, label: 'Moto Morini' },
 
-  { id: 39, imageUrl: nortonLogo, label: 'Norton' },
+    { id: 39, imageUrl: nortonLogo, label: 'Norton' },
 
-  { id: 40, imageUrl: obenLogo, label: 'Oben' },
-  { id: 41, imageUrl: odysseLogo, label: 'Odysse' },
-  { id: 42, imageUrl: okinawaLogo, label: 'Okinawa' },
-  { id: 43, imageUrl: olaLogo, label: 'Ola' },
+    { id: 40, imageUrl: obenLogo, label: 'Oben' },
+    { id: 41, imageUrl: odysseLogo, label: 'Odysse' },
+    { id: 42, imageUrl: okinawaLogo, label: 'Okinawa' },
+    { id: 43, imageUrl: olaLogo, label: 'Ola' },
 
-  { id: 44, imageUrl: pureEvLogo, label: 'Pure-Ev' },
+    { id: 44, imageUrl: pureEvLogo, label: 'Pure-Ev' },
 
-  { id: 45, imageUrl: qjMotorLogo, label: 'Qj-Motor' },
-  { id: 46, imageUrl: quantumEnergyLogo, label: 'Quantum Energy' },
+    { id: 45, imageUrl: qjMotorLogo, label: 'Qj-Motor' },
+    { id: 46, imageUrl: quantumEnergyLogo, label: 'Quantum Energy' },
 
-  { id: 47, imageUrl: revoltLogo, label: 'Revolt' },
+    { id: 47, imageUrl: revoltLogo, label: 'Revolt' },
 
-  { id: 48, imageUrl: simpleEnergyLogo, label: 'Simple Energy' },
+    { id: 48, imageUrl: simpleEnergyLogo, label: 'Simple Energy' },
 
-  { id: 49, imageUrl: ultravioletteLogo, label: 'Ultraviolette' },
+    { id: 49, imageUrl: ultravioletteLogo, label: 'Ultraviolette' },
 
-  { id: 50, imageUrl: vespaLogo, label: 'Vespa' },
-  { id: 51, imageUrl: vidaLogo, label: 'Vida' },
-  { id: 52, imageUrl: vlfLogo, label: 'Vlf' },
+    { id: 50, imageUrl: vespaLogo, label: 'Vespa' },
+    { id: 51, imageUrl: vidaLogo, label: 'Vida' },
+    { id: 52, imageUrl: vlfLogo, label: 'Vlf' },
 
-  { id: 53, imageUrl: yezdiLogo, label: 'Yezdi' },
-  { id: 54, imageUrl: yoLogo, label: 'Yo' },
-  { id: 55, imageUrl: zontesLogo, label: 'Zontes' },
+    { id: 53, imageUrl: yezdiLogo, label: 'Yezdi' },
+    { id: 54, imageUrl: yoLogo, label: 'Yo' },
+    { id: 55, imageUrl: zontesLogo, label: 'Zontes' },
 ];
 
 
