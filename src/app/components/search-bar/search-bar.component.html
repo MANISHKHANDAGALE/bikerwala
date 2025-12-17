@@ -9,16 +9,16 @@
     </div>
   </div>
   @if (show) {
-    <div class="bg-(--bg-primary) text-(--text-primary) absolute top-full w-full left-0 rounded-xl mt-1 z-90" (mousedown)="$event.preventDefault()">
-      <div class="m-1">
-        <h1 class="m-4 text-[11px] space-x-1 text-gray-400 uppercase">Recently Viewed</h1>
+    <div class="bg-(--bg-primary) text-(--text-primary) border border-[#8c8c8c] scroll-auto absolute top-full w-full max-h-75 left-0 rounded-xl mt-1 z-90" (mousedown)="$event.preventDefault()">
+      <div class="m-1 border-b-2 border-[#5E5E5E]">
+        <h1 class="m-3 text-[10px]  text-[#a3a3a3] font-semibold tracking-[1px] uppercase">Recently Viewed</h1>
         @for (item of recentSearch; track item) {
           <div  class="flex items-center overflow-hidden cursor-pointer gap-4">
-            <button mat-icon-button>
-              <mat-icon class="mb-1" >access_time</mat-icon>
+            <button class="leading-none" mat-icon-button>
+              <mat-icon class="!text-[#d1d1d1]" >access_time</mat-icon>
             </button>
-            <h1 (click)="select(item)" class="text-xl mb-1 truncate">{{item}}</h1>
-            <button (click)="delete(item)"  mat-icon-button><mat-icon class="flex justify-center mb-4" >delete</mat-icon></button>
+            <h1 (click)="select(item)" class="text-[13px] text-[#e8e8e8] font-normal mb-1 truncate">{{item}}</h1>
+            <button (click)="delete(item)" class="leading-none" mat-icon-button><mat-icon class="!text-[#d1d1d1]" >delete</mat-icon></button>
           </div>
         }
       </div>
