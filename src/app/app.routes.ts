@@ -19,20 +19,20 @@ export const routes: Routes = [
     path:'signUp',
     component:SignUpComponent,
   },
-  {
-    path: '/:brandId/:brandbike',
-    loadComponent: () =>
-      import('./pages/brand-bike/brand-bike.component')
-        .then(m => m.BrandBikeComponent),
-    // canActivate: [authGuard]
-  },
-  {
-    path: '/:brandId',
-    loadComponent: () =>
-      import('./pages/brands/brands.component')
-        .then(m => m.BrandsComponent),
-    // canActivate: [authGuard]
-  },
+  // {
+  //   path: '/:brandId/:brandbike',
+  //   loadComponent: () =>
+  //     import('./pages/brand-bike/brand-bike.component')
+  //       .then(m => m.BrandBikeComponent),
+  //   // canActivate: [authGuard]
+  // },
+  // {
+  //   path: '/:brandId',
+  //   loadComponent: () =>
+  //     import('./pages/brands/brands.component')
+  //       .then(m => m.BrandsComponent),
+  //   // canActivate: [authGuard]
+  // },
   {
     path: '**',
     redirectTo: ''
