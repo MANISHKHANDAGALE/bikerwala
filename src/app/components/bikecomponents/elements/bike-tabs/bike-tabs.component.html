@@ -6,7 +6,7 @@
       class="pb-3 relative transition"
       [ngClass]="
         activeTab === tab
-          ? 'text-cyan-400'
+          ? 'text-[#91D9C7]'
           : 'text-gray-400 hover:text-white'
       "
     >
@@ -15,7 +15,7 @@
       <!-- Active underline -->
       <span
         *ngIf="activeTab === tab"
-        class="absolute left-0 bottom-0 w-full h-0.5 bg-cyan-400 rounded">
+        class="absolute left-0 bottom-0 w-full h-0.5 bg-[#91D9C7] rounded">
       </span>
     </button>
   </div>

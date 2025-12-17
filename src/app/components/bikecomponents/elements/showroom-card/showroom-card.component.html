@@ -1,27 +1,27 @@
-<app-card
-  [tailwindClass]="
-    'bg-[#1b1b1b] rounded-xl border border-white/10
-     p-4 space-y-3 hover:border-cyan-400/30 transition mb-3'
-  "
->
-  <!-- Showroom Name -->
-  <h3 class="text-white font-semibold text-lg">
-    {{ name }}
-  </h3>
+<app-card [tailwindClass]="
+    'p-4 space-y-3 mb-4
+     bg-[var(--card-bg-color)]
+     border border-[var(--border-color)]
+     rounded-[var(--radius-md)]'
+  ">
 
-  <!-- Address -->
-  <div class="flex gap-3 text-gray-300 text-sm leading-relaxed">
-    <i class="fa-solid fa-location-dot text-gray-400 mt-1"></i>
-    <span>{{ address }}</span>
-  </div>
+    <!-- Showroom Name -->
+    <h3 class="text-(--text-primary) font-semibold text-base">
+        {{ name }}
+    </h3>
 
-  <!-- CTA -->
-  <button
-    class="flex items-center gap-2 text-cyan-400 text-sm font-medium
-           hover:underline w-fit"
-    (click)="$event.stopPropagation()"
-  >
-    Get Directions
-    <i class="fa-solid fa-arrow-right text-xs"></i>
-  </button>
+    <div class="flex gap-3 text-sm text-(--text-secondary) leading-relaxed">
+        <i class="fa-solid fa-location-dot text-(--text-tertiary) mt-1"></i>
+        <span>{{ address }}</span>
+    </div>
+
+    <button class="flex items-center gap-2 text-sm
+         text-[#63B1DC]
+         w-fit
+         font-semibold
+         hover:cursor-pointer">
+        Get Directions
+        <i class="fa-solid fa-arrow-right text-xs"></i>
+    </button>
+
 </app-card>
