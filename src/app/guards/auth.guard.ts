@@ -11,6 +11,7 @@ export const authGuard: CanActivateFn = () => {
   //   map(isAuth => {
   //     if (isAuth) return true;
 
+<<<<<<< HEAD
   //     alert('Please signin or signup first');
   //     router.navigate(['/signin']);
   //     return false;
@@ -24,3 +25,11 @@ export const authGuard: CanActivateFn = () => {
   return false;
 };
 
+=======
+      alert('Please signin or signup first');
+      router.navigate(['/signin']);
+      return false;
+    })
+  );
+};
+>>>>>>> 5925825c85312314bcbb8315b8d5d2f779d2984e

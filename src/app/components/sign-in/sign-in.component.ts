@@ -32,8 +32,13 @@ export default class SignInComponent {
 
     this.loading = true;
     this.error = null;
+<<<<<<< HEAD
     const {email,password} = this.signInForm.value
     this.authService.signin(email,password).subscribe({
+=======
+    const{email, password} = this.signInForm.value
+    this.authService.signin(email, password).subscribe({
+>>>>>>> 5925825c85312314bcbb8315b8d5d2f779d2984e
       next: () => {
         this.router.navigate(['/']);
       },
