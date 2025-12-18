@@ -209,6 +209,8 @@ body {
   font-size: 14px;
   overflow-x: hidden;
   border-color: var(--border-color) ;
+  -webkit-font-smoothing:antialiased ;
+  text-rendering: optimizeLegibility;
 }
 
 
