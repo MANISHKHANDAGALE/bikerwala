@@ -19,7 +19,7 @@ export class FeatureBikeComponent {
   breakpoints = {
     0: { slidesPerView: 1, spaceBetween: 5 },
     640: { slidesPerView: 2, spaceBetween: 5 },
-    1250: { slidesPerView: 3, spaceBetween: 10 }
+    1250: { slidesPerView: 3, spaceBetween: 15 }
   };
 
   categories = ['trending', 'popular', 'electric', 'upcoming'];

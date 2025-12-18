@@ -1,49 +1,62 @@
-<div class="w-full  font-sans py-6">
-  <!-- MAIN CENTERED COLUMN -->
-  <div class="max-w-[992px]  mx-auto px-4 sm:px-6">
+<div class="w-[1007px] h-[512px] mx-auto font-(--font-primary) py-6 lg:-mt-[16px]">
 
-    <!-- Title -->
-    <h1 class="font-bold text-[22px] sm:text-[22px] text-[#E8E8E8] mb-2">
-      Featured Bikes
-    </h1>
+  <!-- TITLE -->
+  <h1 class="w-[1007px] h-[43px] text-[22px] font-[700] lg:-mt-0.5 text-[#E8E8E8] mb-[12px] flex items-center">
+    Featured Bikes
+  </h1>
 
-    <!-- Categories -->
-    <div class="lg:mb-8 ">
-      <div class="flex flex-wrap lg:gap-4 ">
-        @for (category of categories; track category) {
-        <button (click)="onCategorySelect(category)" class="px-4 py-2 text-sm font-medium cursor-pointer " [ngClass]="
-              selectedCategory === category
-                ? 'text-[#91D9D3] border-b-4 border-[#91D9D3]'
-                : 'text-[#D1D1D1] hover:text-white'
-            ">
+  <!-- CATEGORY BUTTONS -->
+  <div class="w-[1007px] h-[48px] ">
+    <div class="flex gap-[20px] lg:-mt-[7px] h-full items-center">
+      @for (category of categories; track category) {
+
+      <button (click)="onCategorySelect(category)"
+        class="h-[48px] w-[81px] cursor-pointer flex items-center justify-center">
+        <span class="text-[13px] -ml-3 font-bold pb-[10px]" [ngClass]="
+            selectedCategory === category
+              ? 'text-[#91D9D3] border-b-4 border-[#91D9D3]'
+              : 'text-[#D1D1D1]'
+          ">
           {{ category | uppercase }}
-        </button>
-        }
-      </div>
+        </span>
+      </button>
 
-      <!-- Divider -->
-      <div class="w-full h-px bg-gray-700 "></div>
+      }
     </div>
 
-    <!-- Slider -->
-    <app-slider [navigation]="navigation" [breakpoints]="breakpoints" containerClass="w-full h-full mt-3 rounded-md">
+    <!-- Divider -->
+    <div class="w-full h-px bg-gray-700 -mt-2"></div>
+  </div>
+
+
+  <!-- SLIDER WRAPPER -->
+  <div class="w-[1007px] h-[372px] -mt-[8px]">
+
+    <app-slider [navigation]="navigation" [breakpoints]="breakpoints" containerClass="w-[1007px] h-full">
+
       @for (bike of filteredBikes; track bike.id) {
       <swiper-slide>
-        <div class="flex justify-center" >
+        <div class="flex justify-center items-center h-full">
+
           <!-- CARD -->
-          <div class="w-[334.629px] h-[333.516px] bg-(--card-bg-color) rounded-2xl p-4 flex flex-col justify-between
-               border border-[#252525] cursor-pointer" [routerLink]="['/', bike.brand, bike.id]" >
-            <div class="w-full h-[150px] flex items-center justify-center">
-              <img [src]="bike.imageUrl" class="max-h-full object-contain scale-130"  />
+          <div class="w-[335px] h-[335px] bg-(--card-bg-color)
+                     rounded-2xl p-[15px]
+                     flex flex-col justify-between
+                     border border-[#3F3F3F] cursor-pointer" [routerLink]="['/', bike.brand, bike.slug]">
+
+            <!-- IMAGE -->
+            <div class="w-full max-w-[320px] h-[180px] mx-auto flex items-center justify-center">
+              <img [src]="bike.imageUrl" class="w-full lg:-mt-4  h-full object-contain scale-112" alt="{{ bike.title }} " />
             </div>
 
+            <!-- CONTENT -->
             <div>
               <h2 class="text-[15px] font-semibold text-[#E8E8E8]">
                 {{ bike.title }}
               </h2>
 
-              <p class="text-[16px] text-[#E8E8E8] font-bold mt-1">
-                ₹ {{ bike.price  }}
+              <p class="text-[16px] font-bold text-[#E8E8E8] mt-1">
+                ₹ {{ bike.price }}
                 <span class="text-[11px] text-[#D1D1D1]">Onwards</span>
               </p>
 
@@ -52,17 +65,17 @@
               </p>
             </div>
 
-            <button class="w-[158px]   py-2 text-center rounded-xl text-[14px]
-                 border border-[#5EEAD4] text-[#5EEAD4]
-                 ">
+            <!-- CTA -->
+            <button class="w-[158px] h-[40px] rounded-xl text-[14px]
+                       border border-[#5EEAD4] text-[#5EEAD4]">
               Check on-road price
             </button>
+
           </div>
         </div>
       </swiper-slide>
       }
 
     </app-slider>
-
   </div>
 </div>
