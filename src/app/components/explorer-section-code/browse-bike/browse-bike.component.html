@@ -1,0 +1,184 @@
+<div class="bg-[#1A1A1A] mt-5 w-full text-[#D1D1D1] h-min">
+
+  <!-- MAIN FIXED-WIDTH CONTAINER (responsive) -->
+  <div class="w-full max-w-[1007px] mx-auto px-4 sm:px-0">
+
+    <!-- Heading -->
+    <h1 class="font-bold text-[22px] sm:text-[22px] text-[#E8E8E8] mb-5">
+      Browse Bikes By
+    </h1>
+
+    <!-- Category Tabs -->
+    <div>
+      <div class="flex gap-[24px] sm:gap-[37px]
+               flex-nowrap sm:flex-wrap
+               overflow-x-auto sm:overflow-visible
+               whitespace-nowrap
+               pb-2
+               scrollbar-hide">
+
+        @for (category of categories; track category) {
+        <button (click)="onCategorySelect(category)" class="text-[13px] font-bold pb-[10px]" [ngClass]="
+            selectedCategory === category
+              ? 'text-[#91D9D3] border-b-4 border-[#91D9D3]'
+              : 'text-[#D1D1D1]'
+          ">
+          {{ category | uppercase }}
+        </button>
+        }
+      </div>
+
+      <!-- Divider -->
+      <div class="w-full h-px bg-gray-700 -mt-2"></div>
+    </div>
+
+    <!-- BODY -->
+    <div class="mt-4 mb-10">
+
+      <!-- BODY STYLE -->
+      @if (selectedCategory == 'bodystyle') {
+      <div class="w-full
+               border border-[#3F3F3F]
+               overflow-hidden
+               bg-[#1A1A1A]">
+
+        <div class="grid
+                 grid-cols-2
+                 sm:grid-cols-3
+                 lg:grid-cols-6">
+
+          @for (body of bodystyle; track body.id) {
+          <div class="h-[100px] sm:h-[110px]
+                   flex flex-col items-center justify-center gap-3
+                   cursor-pointer
+                   border-r border-b border-[#3F3F3F]
+                   hover:bg-[#202020]
+                   transition">
+
+            <img [src]="body.imageUrl" [alt]="body.title" class="w-[68px] h-[35px] object-contain" />
+
+            <p class="text-[13px] h-[10px] font-[600] text-[#D1D1D1]">
+              {{ body.title }}
+            </p>
+          </div>
+          }
+        </div>
+      </div>
+      }
+
+      <!-- DISPLACEMENT -->
+      @else if (selectedCategory == 'displacement') {
+      <div class="w-full
+               border border-[#3F3F3F]
+               rounded-b-2xl
+               p-4 sm:p-6
+               bg-[#262626]">
+
+        <div class="grid
+                 grid-cols-1
+                 sm:grid-cols-2
+                 md:grid-cols-3
+                 lg:grid-cols-5
+                 gap-x-6 gap-y-5">
+
+          @for (displacement of displacements; track displacement.id) {
+          <button class="h-[44px]
+                   px-6
+                   rounded-full
+                   border border-gray-400
+                   cursor-pointer
+                   font-[700]
+                   text-[#E8E8E8]
+                   hover:border-[#0B877D]
+                   hover:text-white
+                   bg-[#1A1A1A]
+                   transition
+                   text-center
+                   text-[14px]
+                   whitespace-nowrap">
+            {{ displacement.cc }}cc
+          </button>
+          }
+        </div>
+      </div>
+      }
+
+      <!-- BUDGET -->
+      @else if (selectedCategory == 'budget') {
+      <div class="w-full
+               border border-[#3F3F3F]
+               rounded-b-2xl
+               p-4 sm:p-6
+               bg-[#262626]">
+
+        <div class="grid
+                 grid-cols-1
+                 sm:grid-cols-2
+                 md:grid-cols-3
+                 lg:grid-cols-5
+                 gap-x-6 gap-y-5">
+
+          @for (price of prices; track price.id) {
+          <button class="h-[44px]
+                   px-6
+                   rounded-full
+                   border border-gray-400
+                   cursor-pointer
+                   font-[700]
+                   text-[#E8E8E8]
+                   hover:border-[#0B877D]
+                   hover:text-white
+                   bg-[#1A1A1A]
+                   transition
+                   text-center
+                   text-[14px]
+                   whitespace-nowrap">
+            {{ price.price }}
+          </button>
+          }
+        </div>
+      </div>
+      }
+
+      <!-- BRAND -->
+      @else if (selectedCategory === 'brand') {
+      <div class="w-full
+               border border-gray-700 rounded-2xl
+               overflow-hidden">
+
+        <div class="grid
+                 grid-cols-2
+                 sm:grid-cols-3
+                 md:grid-cols-4
+                 lg:grid-cols-5">
+
+          @for (b of visibleBrands; track b.id) {
+          <div class="flex flex-col items-center justify-center
+                   py-[10px] cursor-pointer
+                   border-r border-b border-gray-700
+                   hover:bg-[#1f1f1f] transition" [routerLink]="['/', b.label]">
+
+            <img [src]="b.imageUrl" class="w-14 h-14 object-contain rounded-lg mb-2 scale-160" />
+
+            <p class="text-[13px] text-[#D1D1D1] font-[600]">
+              {{ b.label }}
+            </p>
+          </div>
+          }
+        </div>
+
+        <div *ngIf="brand.length > VISIBLE_COUNT" class="w-full border-t border-gray-700">
+          <button (click)="toggleShowAll()" class="w-full py-3 text-sm font-semibold
+                   text-[#63B1DC]
+                   hover:bg-[#1f1f1f]
+                   transition">
+            {{ showAll ? 'View Less Brands' : 'View More Brands' }}
+          </button>
+        </div>
+
+      </div>
+      }
+
+    </div>
+  </div>
+</div>
