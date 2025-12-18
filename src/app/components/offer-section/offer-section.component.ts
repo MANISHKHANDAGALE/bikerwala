@@ -28,7 +28,7 @@ export class OfferSectionComponent {
     },
     1024: {
       slidesPerView: 4,
-      spaceBetween: 18,
+      spaceBetween: 10,
     },
     // no 1280+ breakpoint → falls back to slidesPerView = 4
   };
