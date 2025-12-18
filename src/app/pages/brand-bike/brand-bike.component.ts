@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './brand-bike.component.html',
   styleUrl: './brand-bike.component.css'
 })
-export class BrandBikeComponent {
+export default class BrandBikeComponent {
 
 }

@@ -9,7 +9,7 @@
     </div>
   </div>
   @if (show) {
-    <div class="bg-(--bg-primary) text-(--text-primary) border border-[#8c8c8c] scroll-auto absolute top-full w-full max-h-75 left-0 rounded-xl mt-1 z-90" (mousedown)="$event.preventDefault()">
+    <div class="bg-(--bg-primary) text-(--text-primary) border border-[#8c8c8c] scroll-auto overflow-y-scroll  absolute top-full w-full max-h-75 left-0 rounded-xl mt-1 z-90" (mousedown)="$event.preventDefault()">
       <div class="m-1 border-b-2 border-[#5E5E5E]">
         <h1 class="m-3 text-[10px]  text-[#a3a3a3] font-semibold tracking-[1px] uppercase">Recently Viewed</h1>
         @for (item of recentSearch; track item) {
@@ -20,11 +20,11 @@
             <h1 (click)="select(item)" class="text-[13px] text-[#e8e8e8] font-normal mb-1 truncate">{{item}}</h1>
             <button (click)="delete(item)" class="leading-none" mat-icon-button><mat-icon class="!text-[#d1d1d1]" >delete</mat-icon></button>
           </div>
-        }
+        } 
       </div>
       @for (item of suggestions(); track item) {
-        <div class="flex flex-col items-center rounded-xl  px-4 py-2 cursor-pointer" (click)="select(item)">
-          <a (click)="selectedSearch(item)" class="text-white! w-full ">{{item}}</a>
+        <div class="flex flex-col items-center rounded-xl  px-4 py-2 cursor-pointer" (click)="select(item.title)">
+          <a (click)="selectedSearch(item)" class="text-white! w-full ">{{item.title}}</a>
         </div>
       }
     </div>

@@ -25,8 +25,6 @@ export const routes: Routes = [
     canActivate: [authGuard],
     loadComponent: () =>
       import('./pages/brand-bike/brand-bike.component')
-        .then(m => m.BrandBikeComponent),
-
       },
       {
         path:"royal",

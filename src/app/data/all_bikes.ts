@@ -1,7 +1,7 @@
 import { Prodcuts } from "./data";
 import { bajaj, honda, royalenfield, tvs, yamaha, hero, ktm, kawasaki, suzuki, triumph } from "./imageUrls";
 
-interface Allbike {
+export interface Allbike {
     royalenfield: {
         bikes: Prodcuts[],
         key_highlights: {}
@@ -54,15 +54,13 @@ interface Allbike {
     }
 }
 
-
-
 export const allbikeslist: Allbike = {
     royalenfield: {
         "bikes": [
             {
                 "id": 1,
                 "slug": "bear-650",
-                "title": "Bear 650",
+                "title": "Royal Enfield Bear 650",
                 "imageUrl": `${royalenfield}/bear-650.png`,
                 "price": "₹3.50 Lakh",
                 "rating": "4.6",
@@ -90,7 +88,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 2,
                 "slug": "bullet-650",
-                "title": "Bullet 650",
+                "title": "Royal Enfield Bullet 650",
                 "imageUrl": `${royalenfield}/bullet-650.png`,
                 "price": "₹3.40 Lakh",
                 "rating": "4.5",
@@ -118,7 +116,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 3,
                 "slug": "classic-350",
-                "title": "Classic 350",
+                "title": "Royal Enfield Classic 350",
                 "imageUrl": `${royalenfield}/classic-350.png`,
                 "price": "₹1.93 Lakh",
                 "rating": "4.7",
@@ -146,7 +144,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 4,
                 "slug": "classic-650",
-                "title": "Classic 650",
+                "title": "Royal Enfield Classic 650",
                 "imageUrl": `${royalenfield}/classic-650.png`,
                 "price": "₹3.30 Lakh",
                 "rating": "4.6",
@@ -174,7 +172,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 5,
                 "slug": "continental-gt-450",
-                "title": "Continental GT 450",
+                "title": "Royal Enfield Continental GT 450",
                 "imageUrl": `${royalenfield}/continental-gt-450.png`,
                 "price": "₹2.90 Lakh",
                 "rating": "4.4",
@@ -202,7 +200,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 6,
                 "slug": "continental-gt-750",
-                "title": "Continental GT 750",
+                "title": "Royal Enfield Continental GT 750",
                 "imageUrl": `${royalenfield}/continental-gt-750.png`,
                 "price": "₹3.80 Lakh",
                 "rating": "4.7",
@@ -230,7 +228,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 7,
                 "slug": "hunter-350",
-                "title": "Hunter 350",
+                "title": "Royal Enfield Hunter 350",
                 "imageUrl": `${royalenfield}/hunter-350.png`,
                 "price": "₹1.50 Lakh",
                 "rating": "4.5",
@@ -258,7 +256,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 8,
                 "slug": "interceptor-650",
-                "title": "Interceptor 650",
+                "title": "Royal Enfield Interceptor 650",
                 "imageUrl": `${royalenfield}/interceptor.png`,
                 "price": "₹3.10 Lakh",
                 "rating": "4.8",
@@ -286,7 +284,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 9,
                 "slug": "meteor-350",
-                "title": "Meteor 350",
+                "title": "Royal Enfield Meteor 350",
                 "imageUrl": `${royalenfield}/meteor-350.png`,
                 "price": "₹2.05 Lakh",
                 "rating": "4.6",
@@ -314,7 +312,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 10,
                 "slug": "himalayan",
-                "title": "Himalayan 411",
+                "title": "Royal Enfield Himalayan 411",
                 "imageUrl": `${royalenfield}/himalayan.png`,
                 "price": "₹2.20 Lakh",
                 "rating": "4.5",
@@ -342,7 +340,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 11,
                 "slug": "scram-440",
-                "title": "Scram 440",
+                "title": "Royal Enfield Scram 440",
                 "imageUrl": `${royalenfield}/scram-440.png`,
                 "price": "₹2.40 Lakh",
                 "rating": "4.3",
@@ -370,7 +368,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 12,
                 "slug": "scrambler-450",
-                "title": "Scrambler 450",
+                "title": "Royal Enfield Scrambler 450",
                 "imageUrl": `${royalenfield}/scrambler-450.png`,
                 "price": "₹2.70 Lakh",
                 "rating": "4.4",
@@ -398,7 +396,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 13,
                 "slug": "shotgun-650",
-                "title": "Shotgun 650",
+                "title": "Royal Enfield Shotgun 650",
                 "imageUrl": `${royalenfield}/shotgun-650.png`,
                 "price": "₹3.60 Lakh",
                 "rating": "4.6",
@@ -426,7 +424,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 14,
                 "slug": "super-meteor-750",
-                "title": "Super Meteor 750",
+                "title": "Royal Enfield Super Meteor 750",
                 "imageUrl": `${royalenfield}/super-meteor-750.png`,
                 "price": "₹4.10 Lakh",
                 "rating": "4.7",
@@ -454,7 +452,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 15,
                 "slug": "himalayan-electric",
-                "title": "Himalayan Electric",
+                "title": "Royal Enfield Himalayan Electric",
                 "imageUrl": `${royalenfield}/himalayan-electric.png`,
                 "price": "₹6.00 Lakh",
                 "rating": "4.2",
@@ -495,7 +493,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 1,
                 "slug": "avenger-cruise-320",
-                "title": "Avenger Cruise 220",
+                "title": "Bajaj Avenger Cruise 220",
                 "imageUrl": `${bajaj}/avenger-cruise-320.png`,
                 "brand": "Bajaj",
                 "category": "Cruiser",
@@ -520,7 +518,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 2,
                 "slug": "avenger-street-160",
-                "title": "Avenger Street 160",
+                "title": "Bajaj Avenger Street 160",
                 "imageUrl": `${bajaj}/avenger-street-160.png`,
                 "brand": "Bajaj",
                 "category": "Cruiser",
@@ -617,7 +615,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 6,
                 "slug": "dominar-350",
-                "title": "Dominar 250",
+                "title": "Bajaj Dominar 250",
                 "imageUrl": `${bajaj}/dominar-350.png`,
                 "brand": "Bajaj",
                 "category": "Tourer",
@@ -642,7 +640,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 7,
                 "slug": "dominar-400",
-                "title": "Dominar 400",
+                "title": "Bajaj Dominar 400",
                 "imageUrl": `${bajaj}/dominar-400.png`,
                 "brand": "Bajaj",
                 "category": "Tourer",
@@ -667,7 +665,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 8,
                 "slug": "platina-100",
-                "title": "Platina 100",
+                "title": "Bajaj Platina 100",
                 "imageUrl": `${bajaj}/platina-100.png`,
                 "brand": "Bajaj",
                 "category": "Commuter",
@@ -689,7 +687,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 9,
                 "slug": "pulsar-n160",
-                "title": "Pulsar N160",
+                "title": "Bajaj Pulsar N160",
                 "imageUrl": `${bajaj}/pulsar-n160.png`,
                 "brand": "Bajaj",
                 "category": "Sports",
@@ -714,7 +712,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 10,
                 "slug": "rs-200",
-                "title": "Pulsar RS 200",
+                "title": "Bajaj Pulsar RS 200",
                 "imageUrl": `${bajaj}/rs-200.png`,
                 "brand": "Bajaj",
                 "category": "Sports",
@@ -803,8 +801,8 @@ export const allbikeslist: Allbike = {
             {
                 "id": 3,
                 "slug": "activa-7g",
-                "title": `${honda}/Honda Activa 7G`,
-                "imageUrl": "activa-7g.png",
+                "title": "Honda Activa 7G",
+                "imageUrl": `${honda}/activa-7g.png`,
                 "brand": "Honda",
                 "category": "Scooter",
                 "bikeType": "scooter",
@@ -822,8 +820,8 @@ export const allbikeslist: Allbike = {
             {
                 "id": 4,
                 "slug": "activa-electric",
-                "title": `${honda}/Honda Activa Electric`,
-                "imageUrl": "activa-e.png",
+                "title": "Honda Activa Electric",
+                "imageUrl": `${honda}/activa-e.png`,
                 "brand": "Honda",
                 "category": "Scooter",
                 "bikeType": "scooter",
@@ -840,8 +838,8 @@ export const allbikeslist: Allbike = {
             {
                 "id": 5,
                 "slug": "cb-125-hornet",
-                "title": `${honda}/Honda CB 125 Hornet`,
-                "imageUrl": "cb-125-hornet.png",
+                "title": "Honda CB 125 Hornet",
+                "imageUrl": `${honda}/cb-125-hornet.png`,
                 "brand": "Honda",
                 "category": "Street",
                 "bikeType": "commuter",
@@ -975,7 +973,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 1,
                 "slug": "apache-160",
-                "title": "Apache 160",
+                "title": "TVS Apache 160",
                 "imageUrl": `${tvs}/apache-160.png`,
                 "price": "₹1.20 Lakh",
                 "rating": "4.4",
@@ -1003,7 +1001,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 2,
                 "slug": "apache-180",
-                "title": "Apache 180",
+                "title": "TVS Apache 180",
                 "imageUrl": `${tvs}/apache-180.png`,
                 "price": "₹1.35 Lakh",
                 "rating": "4.5",
@@ -1031,7 +1029,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 3,
                 "slug": "apache-200",
-                "title": "Apache 200",
+                "title": "TVS Apache 200",
                 "imageUrl": `${tvs}/apache-200.png`,
                 "price": "₹1.45 Lakh",
                 "rating": "4.6",
@@ -1059,7 +1057,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 4,
                 "slug": "apache-rr-310",
-                "title": "Apache RR 310",
+                "title": "TVS Apache RR 310",
                 "imageUrl": `${tvs}/apache-rr-310.png`,
                 "price": "₹2.72 Lakh",
                 "rating": "4.7",
@@ -1087,7 +1085,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 5,
                 "slug": "apache-rtr-160-4v",
-                "title": "Apache RTR 160 4V",
+                "title": "TVS Apache RTR 160 4V",
                 "imageUrl": `${tvs}/apache-rtr-160-4v.png`,
                 "price": "₹1.25 Lakh",
                 "rating": "4.6",
@@ -1115,7 +1113,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 6,
                 "slug": "apache-rtr-310",
-                "title": "Apache RTR 310",
+                "title": "TVS Apache RTR 310",
                 "imageUrl": `${tvs}/apache-rtr-310.png`,
                 "price": "₹2.43 Lakh",
                 "rating": "4.6",
@@ -1143,7 +1141,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 7,
                 "slug": "apache-rtx",
-                "title": "Apache RTX",
+                "title": "TVS Apache RTX",
                 "imageUrl": `${tvs}/apache-rtx.png`,
                 "price": "₹2.80 Lakh",
                 "rating": "4.3",
@@ -1199,7 +1197,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 9,
                 "slug": "jupiter-125",
-                "title": "Jupiter 125",
+                "title": "TVS Jupiter 125",
                 "imageUrl": `${tvs}/jupiter-125.png`,
                 "price": "₹88,000",
                 "rating": "4.4",
@@ -1227,7 +1225,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 10,
                 "slug": "jupiter-electric",
-                "title": "Jupiter Electric",
+                "title": "TVS Jupiter Electric",
                 "imageUrl": `${tvs}/jupiter-electric.png`,
                 "price": "₹1.30 Lakh",
                 "rating": "4.3",
@@ -1255,7 +1253,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 11,
                 "slug": "jupiter",
-                "title": "Jupiter",
+                "title": "TVS Jupiter",
                 "imageUrl": `${tvs}/jupiter.png`,
                 "price": "₹75,000",
                 "rating": "4.5",
@@ -1283,7 +1281,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 12,
                 "slug": "ntorq-125",
-                "title": "NTorq 125",
+                "title": "TVS NTorq 125",
                 "imageUrl": `${tvs}/ntorq-125.png`,
                 "price": "₹87,000",
                 "rating": "4.6",
@@ -1311,7 +1309,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 13,
                 "slug": "ntorq-150",
-                "title": "NTorq 150",
+                "title": "TVS NTorq 150",
                 "imageUrl": `${tvs}/ntorq-150.png`,
                 "price": "₹1.05 Lakh",
                 "rating": "4.4",
@@ -1339,7 +1337,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 14,
                 "slug": "orbiter",
-                "title": "Orbiter",
+                "title": "TVS Orbiter",
                 "imageUrl": `${tvs}/orbiter.png`,
                 "price": "₹1.60 Lakh",
                 "rating": "4.2",
@@ -1367,7 +1365,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 15,
                 "slug": "radeon",
-                "title": "Radeon",
+                "title": "TVS Radeon",
                 "imageUrl": `${tvs}/radeon.png`,
                 "price": "₹72,000",
                 "rating": "4.3",
@@ -1408,7 +1406,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 1,
                 "slug": "aerox-155",
-                "title": "Aerox 155",
+                "title": "Yamaha Aerox 155",
                 "imageUrl": `${yamaha}/aerox-155.png`,
                 "price": "₹1.47 Lakh",
                 "rating": "4.6",
@@ -1436,7 +1434,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 2,
                 "slug": "aerox-electric",
-                "title": "Aerox Electric",
+                "title": "Yamaha Aerox Electric",
                 "imageUrl": `${yamaha}/aerox-e.png`,
                 "price": "₹1.80 Lakh",
                 "rating": "4.3",
@@ -1464,7 +1462,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 3,
                 "slug": "fascino",
-                "title": "Fascino 125",
+                "title": "Yamaha Fascino 125",
                 "imageUrl": `${yamaha}/fascino.png`,
                 "price": "₹80,000",
                 "rating": "4.4",
@@ -1492,7 +1490,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 4,
                 "slug": "fz-s",
-                "title": "FZ-S",
+                "title": "Yamaha FZ-S",
                 "imageUrl": `${yamaha}/fz-s.png`,
                 "price": "₹1.22 Lakh",
                 "rating": "4.5",
@@ -1520,7 +1518,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 5,
                 "slug": "fz-s-hybrid",
-                "title": "FZ-S Hybrid",
+                "title": "Yamaha FZ-S Hybrid",
                 "imageUrl": `${yamaha}/fz-s-hybrid.png`,
                 "price": "₹1.30 Lakh",
                 "rating": "4.4",
@@ -1548,7 +1546,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 6,
                 "slug": "fz-v3",
-                "title": "FZ V3",
+                "title": "Yamaha FZ V3",
                 "imageUrl": `${yamaha}/fz-v3.png`,
                 "price": "₹1.17 Lakh",
                 "rating": "4.3",
@@ -1576,7 +1574,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 7,
                 "slug": "fz-x",
-                "title": "FZ-X",
+                "title": "Yamaha FZ-X",
                 "imageUrl": `${yamaha}/fz-x.png`,
                 "price": "₹1.36 Lakh",
                 "rating": "4.4",
@@ -1604,8 +1602,8 @@ export const allbikeslist: Allbike = {
             {
                 "id": 8,
                 "slug": "fz-x-hybrid",
-                "title": `${yamaha}/FZ-X Hybrid`,
-                "imageUrl": "fz-x-hybrid.png",
+                "title": "Yamaha FZ-X Hybrid",
+                "imageUrl": `${yamaha}/fz-x-hybrid.png`,
                 "price": "₹1.45 Lakh",
                 "rating": "4.2",
                 "stars": 4,
@@ -1632,7 +1630,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 9,
                 "slug": "fzs-fi-v4",
-                "title": "FZS FI V4",
+                "title": "Yamaha FZS FI V4",
                 "imageUrl": `${yamaha}/fzs-fi-v4.png`,
                 "price": "₹1.30 Lakh",
                 "rating": "4.6",
@@ -1660,7 +1658,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 10,
                 "slug": "mt-15",
-                "title": "MT-15",
+                "title": "Yamaha MT-15",
                 "imageUrl": `${yamaha}/mt-15.png`,
                 "price": "₹1.68 Lakh",
                 "rating": "4.7",
@@ -1688,7 +1686,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 11,
                 "slug": "mt-03",
-                "title": "MT-03",
+                "title": "Yamaha MT-03",
                 "imageUrl": `${yamaha}/mt-03.png`,
                 "price": "₹4.60 Lakh",
                 "rating": "4.6",
@@ -1716,7 +1714,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 12,
                 "slug": "mt-07",
-                "title": "MT-07",
+                "title": "Yamaha MT-07",
                 "imageUrl": `${yamaha}/mt-07.png`,
                 "price": "₹7.50 Lakh",
                 "rating": "4.8",
@@ -1744,7 +1742,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 13,
                 "slug": "mt-09",
-                "title": "MT-09",
+                "title": "Yamaha MT-09",
                 "imageUrl": `${yamaha}/mt-09.png`,
                 "price": "₹10.50 Lakh",
                 "rating": "4.9",
@@ -1772,7 +1770,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 14,
                 "slug": "lander-250",
-                "title": "Lander 250",
+                "title": "Yamaha Lander 250",
                 "imageUrl": `${yamaha}/lander-250.png`,
                 "price": "₹2.40 Lakh",
                 "rating": "4.3",
@@ -1800,7 +1798,7 @@ export const allbikeslist: Allbike = {
             {
                 "id": 15,
                 "slug": "fz-rave",
-                "title": "FZ Rave",
+                "title": "Yamaha FZ Rave",
                 "imageUrl": `${yamaha}/fz-rave.png`,
                 "price": "₹1.55 Lakh",
                 "rating": "4.2",
