@@ -1,0 +1,122 @@
+<div class="w-full max-w-[1007px] h-auto mx-auto font-(--font-primary) py-6 lg:-mt-[16px] px-4 sm:px-0">
+
+  <!-- TITLE -->
+  <h1
+    class="w-full h-[43px] text-[20px] sm:text-[22px]
+           font-[700] lg:-mt-0.5
+           text-[#E8E8E8] mb-[12px]
+           flex items-center">
+    Featured Bikes
+  </h1>
+
+  <!-- CATEGORY BUTTONS -->
+  <div class="w-full h-[48px] mb-4 sm:mb-0">
+    <div
+      class="flex gap-[12px] sm:gap-[16px] lg:gap-[20px]
+             lg:-mt-[7px] h-full items-center
+             flex-nowrap sm:flex-wrap
+             overflow-x-auto sm:overflow-visible
+             whitespace-nowrap
+             scrollbar-hide
+             px-1 sm:px-0">
+
+      @for (category of categories; track category) {
+
+      <button
+        (click)="onCategorySelect(category)"
+        class="h-[48px] min-w-[81px] cursor-pointer
+               flex items-center justify-center
+               shrink-0">
+        <span
+          class="text-[13px] -ml-3 font-bold pb-[10px]"
+          [ngClass]="
+            selectedCategory === category
+              ? 'text-[#91D9D3] border-b-4 border-[#91D9D3]'
+              : 'text-[#D1D1D1]'
+          ">
+          {{ category | uppercase }}
+        </span>
+      </button>
+
+      }
+    </div>
+
+    <!-- Divider -->
+    <div class="w-full h-px bg-gray-700 -mt-2"></div>
+  </div>
+
+  <!-- SLIDER WRAPPER -->
+  <div class="w-full h-[300px] sm:h-[372px] -mt-[8px] mt-4 sm:mt-0">
+
+    <app-slider
+      [navigation]="navigation"
+      [breakpoints]="breakpoints"
+      containerClass="w-full h-full">
+
+      @for (bike of filteredBikes; track bike.id) {
+      <swiper-slide>
+        <div class="flex justify-center items-center h-full px-3 sm:px-0 py-2 sm:py-0">
+
+          <!-- CARD -->
+          <div
+            class="w-full max-w-[300px] sm:max-w-[335px] h-[320px] sm:h-[335px]
+                   bg-(--card-bg-color)
+                   rounded-2xl p-[12px] sm:p-[15px]
+                   flex flex-col justify-between
+                   border border-[#3F3F3F]
+                   cursor-pointer
+                   mx-2 sm:mx-0 my-2 sm:my-0"
+            [routerLink]="['/', bike.brand, bike.slug]">
+
+            <!-- IMAGE -->
+            <div
+              class="w-full max-w-[320px]
+                     h-[160px] sm:h-[180px]
+                     mx-auto flex items-center justify-center">
+              <img
+                [src]="bike.imageUrl"
+                class="w-full lg:-mt-4 h-full
+                       object-contain scale-112"
+                alt="{{ bike.title }}" />
+            </div>
+
+            <!-- CONTENT -->
+            <div class="gap-[8px]">
+              <h2 class="text-[15px] sm:text-[16px] font-[400] text-[#E8E8E8]">
+                {{ bike.title }}
+              </h2>
+
+              <p class="text-[15px] sm:text-[16px] font-[700] text-[#E8E8E8]">
+                ₹ {{ bike.price }}
+                <span
+                  class="text-[12px] sm:text-[13px]
+                         font-[400] ml-2
+                         text-[#D1D1D1]">
+                  Onwards
+                </span>
+              </p>
+
+              <p class="text-[12px] sm:text-[13px] font-[400] text-[#D1D1D1]">
+                Avg. Ex-Showroom price
+              </p>
+            </div>
+
+            <!-- CTA -->
+            <button
+              class="w-[150px] sm:w-[167px]
+                     h-[32px] text-[13px]
+                     bg-[#1A1A1A]
+                     rounded-sm font-[700]
+                     border border-[#5EEAD4]
+                     text-[#5EEAD4]">
+              Check on-road price
+            </button>
+
+          </div>
+        </div>
+      </swiper-slide>
+      }
+
+    </app-slider>
+  </div>
+</div>

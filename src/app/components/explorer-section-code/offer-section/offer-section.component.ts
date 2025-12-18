@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { SliderComponent } from "../slider/slider.component";
+import { SliderComponent } from "../../slider/slider.component";
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { CardComponent } from "../card/card.component";
-import { Prodcuts, productsList } from '../../data/data';
+import { CardComponent } from "../../card/card.component";
+import { Prodcuts, productsList } from '../../../data/data';
 import { CurrencyPipe } from '@angular/common';
 
 @Component({
@@ -19,7 +19,7 @@ export class OfferSectionComponent {
   navigation = true;
   breakpoints = {
     0: {
-      slidesPerView: 1,
+      slidesPerView: 2,
       spaceBetween: 8,
     },
     640: {
@@ -28,7 +28,7 @@ export class OfferSectionComponent {
     },
     1024: {
       slidesPerView: 4,
-      spaceBetween: 18,
+      spaceBetween: 10,
     },
     // no 1280+ breakpoint → falls back to slidesPerView = 4
   };
@@ -36,7 +36,7 @@ export class OfferSectionComponent {
   slides: Prodcuts[] = [];
 
   ngOnInit() {
-    this.slides = this.getRandomBikes(productsList, 8);
+    this.slides = this.getRandomBikes(productsList, 18);
   }
 
   private getRandomBikes(list: Prodcuts[], count: number): Prodcuts[] {

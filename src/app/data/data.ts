@@ -1,4 +1,4 @@
-import { amperelogo, apriliaLogo, bajajLogo, baseUrl, benelliLogo, bgaussLogo, bmwLogo, bounceLogo, brixtonLogo, bsaLogo, cfmotoLogo, ducatiLogo, evoletLogo, ferratoLogo, gemopaiLogo, harleyDavidsonLogo, heroLogo, hondaLogo, hopElectricLogo, husqvarnaLogo, indianLogo, ivoomiLogo, jawaLogo, joyEBikeLogo, kawasakiLogo, keewayLogo, kineticGreenLogo, kineticLogo, ktmLogo, lambrettaLogo, lectrixLogo, matterLogo, motoGuzziLogo, motoMoriniLogo, nortonLogo, obenLogo, odysseLogo, okinawaLogo, olaLogo, pureEvLogo, qjMotorLogo, quantumEnergyLogo, revoltLogo, royalEnfieldLogo, simpleEnergyLogo, suzukiLogo, triumphLogo, tvsLogo, ultravioletteLogo, vespaLogo, vidaLogo, vlfLogo, yamahaLogo, yezdiLogo, yoLogo, zontesLogo } from "./imageUrls";
+import { amperelogo, apriliaLogo, bajajLogo, baseUrl, benelliLogo, bgaussLogo, bmwLogo, bounceLogo, brixtonLogo, bsaLogo, cfmotoLogo, ducatiLogo, evoletLogo, ferratoLogo, gemopaiLogo, harleyDavidsonLogo, heroLogo, hondaLogo, hopElectricLogo, husqvarnaLogo, indianLogo, ivoomiLogo, jawaLogo, joyEBikeLogo, kawasakiLogo, keewayLogo, kineticGreenLogo, kineticLogo, ktmLogo, lambrettaLogo, lectrixLogo, matterLogo, motoGuzziLogo, motoMoriniLogo, nortonLogo, obenLogo, odysseLogo, okinawaLogo, olaLogo, pureEvLogo, qjMotorLogo, quantumEnergyLogo, revoltLogo, royalenfield, royalEnfieldLogo, simpleEnergyLogo, suzukiLogo, triumphLogo, tvsLogo, ultravioletteLogo, vespaLogo, vidaLogo, vlfLogo, yamahaLogo, yezdiLogo, yoLogo, zontesLogo } from "./imageUrls";
 
 
 export interface Prodcuts {
@@ -45,7 +45,7 @@ export const productsList: Prodcuts[] = [
         "id": 1,
         "slug": "re-classic-350",
         "title": "Royal Enfield Classic 350",
-        "imageUrl": `/classic-350.png`,
+        "imageUrl": `${royalenfield}/classic-350.png`,
         "price": "1,81,129",
         "priceExShowroom": 181129,
         "rating": "4.5",
