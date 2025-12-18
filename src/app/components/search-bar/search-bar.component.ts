@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 import { Allbike } from '../../data/all_bikes';
 import { getAllBikesFlat } from '../../utils/bike.utils';
 import { Prodcuts } from '../../data/data';
+import { ToasterService } from '../../services/toaster.service';
 @Component({
   selector: 'app-search-bar',
   imports: [FontAwesomeModule, MatIconButton, CommonModule, MatIcon],
@@ -24,6 +25,7 @@ export class SearchBarComponent {
  recentSearch:string[] = []
  placeholder = input<string>('Search')
  width = input<string>('100%')
+ toaster = inject(ToasterService)
 @ViewChild('wrapper') wrapper!: ElementRef;
 router = inject(Router)
 @HostListener('document:click', ['$event'])
@@ -57,13 +59,15 @@ selectedBike(){
     this.query = ''
   }
   else{
-    alert("Please Enter Bike Name")
+    // alert("Please Enter Bike Name")
+    this.toaster.error("Please Enter Bike Name")
   }
 }
 selectedSearch(bike:Prodcuts){
     const brandSlug = bike.brand?.toLowerCase().replace(/\s+/g, '-') ?? 'brand';
     this.router.navigate([brandSlug,bike.slug])
     this.recentSearch.push(bike.title)
+    this.recentSearch = this.recentSearch.map((m)=>m).slice(-5)
     localStorage.setItem('recent_search',JSON.stringify(this.recentSearch))
     this.query = ''
     this.close();
@@ -71,7 +75,6 @@ selectedSearch(bike:Prodcuts){
 select(value: any) {
   this.query = value;
   this.onSearch(value);
-
 }
  delete(item:any){
  this.recentSearch = this.recentSearch.filter((i) => i !== item)
@@ -82,7 +85,7 @@ select(value: any) {
   this.query = val
   clearTimeout(this.timer)
   this.timer = setTimeout(()=>{
-    console.log("debounce value :",this.query)
+    // console.log("debounce value :",this.query)
     const term = this.query.trim().toLowerCase();
     if(!term){
       this.suggestions.set([]);
@@ -91,18 +94,9 @@ select(value: any) {
     const bikes = getAllBikesFlat()
     // console.log(bikes)
     const filtered = bikes.filter( bike => bike.brand?.toLowerCase().includes(term) || bike.title.toLowerCase().includes(term) || bike.category?.toLowerCase().includes(term) )
+    this.suggestions.set(filtered)
     // console.log("bikesFlat",bikes)
     // console.log("filtered bikes",filtered)
-    this.suggestions.set(filtered)
-    // const data = [
-    //   ...BIKE_SEARCH_DATA.bikes,
-    //   ...BIKE_SEARCH_DATA.brands,
-    //   ...BIKE_SEARCH_DATA.categories,
-    //   ...BIKE_SEARCH_DATA.engineCCRanges,
-    //   ...BIKE_SEARCH_DATA.priceRanges,
-    // ]
-    // const data = getAllBikesFlat()
-    // console.log(data)
     // this.suggestions.set(data.filter((item)=> item.toLowerCase().includes(term)).slice(0,5))
     // console.log("searched :",this.suggestions())
     // console.log(" recent searched :",this.recentSearch)
