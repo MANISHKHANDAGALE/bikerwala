@@ -1,12 +1,12 @@
-<div class="border-b border-white/10">
-  <div class="flex gap-8 text-sm font-medium">
+<div class="border-b mb-4 border-white/10">
+  <div class="flex gap-8 text-[13px] font-bold">
     <button
       *ngFor="let tab of tabs"
       (click)="setActive(tab)"
       class="pb-3 relative transition"
       [ngClass]="
         activeTab === tab
-          ? 'text-[#91D9C7]'
+          ? 'text-[#91d9d3]'
           : 'text-gray-400 hover:text-white'
       "
     >

@@ -14,11 +14,14 @@ import { CardComponent } from '../card/card.component';
   templateUrl: './bike-card.component.html'
 })
 export class BikeCardComponent {
-  @Input() image!: string;
-  @Input() name!: string;
-  @Input() price!: string;
-  @Input() rating!: number;
-  @Input() reviews!: number;
-  @Input() specs!: string[];
-  @Input() location!: string;
+  @Input() image!: string | null | undefined;
+  @Input() name!: string | null | undefined;
+  @Input() price?: any ;
+  @Input() rating!: string| null | undefined;
+  @Input() reviews?: number;
+  @Input() specs?: string[];
+  @Input() location?: string;
+  constructor(){
+    console.log(this.price)
+  }
 }
