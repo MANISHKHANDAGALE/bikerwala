@@ -61,25 +61,6 @@ export const productsList: Prodcuts[] = [
         "launchStatus": "launched"
     },
     {
-        "id": 2,
-        "slug": "re-continental-gt-650",
-        "title": "Royal Enfield Continental GT 650",
-        "imageUrl": "/assests/bike_img/royalenfield/continental-gt.png",
-        "price": "3,75,000",
-        "priceExShowroom": 375000,
-        "rating": "4.6",
-        "description": "A cafe-racer inspired 650cc twin offering style and performance.",
-        "longdescription": "The Continental GT 650 blends retro café-racer aesthetics with a powerful parallel-twin engine, offering thrilling performance and premium ride quality.",
-        "brand": "Royal Enfield",
-        "category": "trending",
-        "tags": ["trending", "premium"],
-        "fuelType": "petrol",
-        "bikeType": "sports",
-        "engineCC": 648,
-        "mileage": "25 kmpl",
-        "launchStatus": "launched"
-    },
-    {
         "id": 3,
         "slug": "re-hunter-350",
         "title": "Royal Enfield Hunter 350",
@@ -308,25 +289,6 @@ export const productsList: Prodcuts[] = [
         "launchStatus": "launched"
     },
     {
-        "id": 15,
-        "slug": "honda-dio",
-        "title": "Honda Dio",
-        "imageUrl": "/assests/bike_img/honda/dio.png",
-        "price": "74,000",
-        "priceExShowroom": 74000,
-        "rating": "4.3",
-        "description": "A sporty and lightweight scooter popular among young riders.",
-        "longdescription": "Honda Dio stands out with its sporty styling, light handling, and peppy engine, ideal for city use.",
-        "brand": "Honda",
-        "category": "popular",
-        "tags": ["popular", "youth"],
-        "fuelType": "petrol",
-        "bikeType": "scooter",
-        "engineCC": 109,
-        "mileage": "50 kmpl",
-        "launchStatus": "launched"
-    },
-    {
         "id": 16,
         "slug": "re-bullet",
         "title": "Royal Enfield Bullet",
@@ -442,23 +404,6 @@ export const productsList: Prodcuts[] = [
     },
     {
         "id": 22,
-        "slug": "honda-cb1000",
-        "title": "Honda CB1000",
-        "price": "₹14,00,000",
-        "imageUrl": "/assests/bike_img/honda/cb1000.png",
-        "priceExShowroom": 1400000,
-        "rating": null,
-        "description": "A high-performance litre-class naked motorcycle from Honda.",
-        "longdescription": "Honda CB1000 is expected to deliver aggressive styling, advanced electronics, and superbike-level power for performance enthusiasts.",
-        "brand": "Honda",
-        "category": "upcoming",
-        "tags": ["upcoming", "sports", "premium"],
-        "fuelType": "petrol",
-        "bikeType": "sports",
-        "launchStatus": "upcoming"
-    },
-    {
-        "id": 22,
         "slug": "honda-cb1000gt",
         "title": "Honda CB1000GT",
         "price": "₹15,00,000",
@@ -543,23 +488,6 @@ export const productsList: Prodcuts[] = [
         "launchStatus": "upcoming"
     },
     {
-        "id": 27,
-        "slug": "re-continental-gt-450",
-        "title": "Royal Enfield Continental GT 450",
-        "price": "₹2,70,000 ",
-        "imageUrl": "/assests/bike_img/royalenfield/continental-gt-450.png",
-        "priceExShowroom": 270000,
-        "rating": null,
-        "description": "A new-generation cafe racer on a 450cc platform.",
-        "longdescription": "Expected to offer lighter weight, sporty handling, and modern engineering.",
-        "brand": "Royal Enfield",
-        "category": "upcoming",
-        "tags": ["upcoming", "sports", "trending"],
-        "fuelType": "petrol",
-        "bikeType": "sports",
-        "launchStatus": "upcoming"
-    },
-    {
         "id": 28,
         "slug": "tvs-apache-rtx",
         "title": "TVS Apache RTX",
@@ -575,23 +503,6 @@ export const productsList: Prodcuts[] = [
         "fuelType": "petrol",
         "bikeType": "adventure",
         "launchStatus": "upcoming"
-    },
-    {
-        "id": 29,
-        "slug": "honda-activa-e",
-        "title": "Honda Activa e",
-        "imageUrl": "/assests/bike_img/honda/activa-e.png",
-        "price": "150000",
-        "priceExShowroom": 150000,
-        "rating": "4.3",
-        "description": "A smart electric scooter for urban commuting.",
-        "longdescription": "Honda Activa e brings electric mobility to the legendary Activa brand with smart connectivity and swappable batteries.",
-        "brand": "Honda",
-        "category": "electric",
-        "tags": ["electric", "popular"],
-        "fuelType": "electric",
-        "bikeType": "scooter",
-        "launchStatus": "launched"
     },
     {
         "id": 30,
@@ -643,23 +554,6 @@ export const productsList: Prodcuts[] = [
         "bikeType": "scooter",
         "launchStatus": "launched"
     },
-    {
-        "id": 33,
-        "slug": "yamaha-aerox-e",
-        "title": "Yamaha Aerox E",
-        "imageUrl": "/assests/bike_img/yamaha/aerox-e.png",
-        "price": "₹2,20,000 ",
-        "priceExShowroom": 220000,
-        "rating": null,
-        "description": "A premium electric maxi-scooter from Yamaha.",
-        "longdescription": "Aerox E aims to deliver sporty performance with electric efficiency and premium styling.",
-        "brand": "Yamaha",
-        "category": "electric",
-        "tags": ["electric", "upcoming", "premium"],
-        "fuelType": "electric",
-        "bikeType": "scooter",
-        "launchStatus": "upcoming"
-    }
 ]
 
 export interface BrandName {

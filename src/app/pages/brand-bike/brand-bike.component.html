@@ -6,20 +6,38 @@
     <!-- BIKE TITLE + RATING -->
     <div class="mb-4">
       <h1 class="text-[26px] font-[700] !text-[#E8E8E8]">
-        Royal Enfield Classic 350
+        {{bikeDetails?.title}}
       </h1>
 
       <div class="flex items-center gap-3 text-[13px] mt-2">
 
         <!-- Stars -->
-        <div class="flex gap-1 text-[#5EEAD4]">
-          <lucide-angular [img]="starIcon" size="18"> </lucide-angular>
+        <div class="flex gap-1">
+
+          <ng-container *ngFor="let star of getStars(parseRating(bikeDetails?.rating))">
+
+            <!-- Full star -->
+            <lucide-angular *ngIf="star === 'full'" [img]="starIcon" size="18" class="text-[#5EEAD4]">
+            </lucide-angular>
+
+            <!-- Half star -->
+            <lucide-angular *ngIf="star === 'half'" [img]="halfStarIcon" size="18" class="text-[#5EEAD4]">
+            </lucide-angular>
+
+            <!-- Empty star -->
+            <lucide-angular *ngIf="star === 'empty'" [img]="starIcon" size="18" class="text-[#3F3F3F]">
+            </lucide-angular>
+
+          </ng-container>
+
         </div>
+
+
 
         <span class="h-4 w-px bg-[#3F3F3F]"></span>
 
         <span class="text-[#9CA3AF]">
-          1040 Ratings
+          {{bikeDetails?.rating}} Ratings
         </span>
 
         <!-- Vertical divider -->
@@ -64,8 +82,7 @@
     <div class="mt-[15px] border-[#3F3F3F] border grid grid-cols-2 lg:grid-cols-[1.2fr_0.8fr] rounded-xl border gap-6">
 
       <div class="w-[495px] ">
-        <img src="/assests/bike_img/royalenfield/bear-650.png"
-          class="w-[483px]  rounded-tl-[11px] bg-gray-400 h-[272px]" />
+        <img src="{{bikeDetails?.imageUrl}}" class="w-[483px] bg-white  rounded-tl-[11px]  h-[272px]" />
 
         <div class="mt-2 space-x-4 p-2 gap-[32px] mb-2 items-center lg:ml-3.5 flex flex-row">
           <div class="flex gap-x-2">
@@ -131,7 +148,7 @@
 
         <!-- price and avg div -->
         <div class="w-[483px] h-[54px] ml-[5xp] mt-4">
-          <p class="text-[22px] font-[700] !text-[#D1D1D1]">₹ 1,81,129 <span
+          <p class="text-[22px] font-[700] !text-[#D1D1D1]">{{bikeDetails?.price}}<span
               class="text-[13px] font-[400] ml-3 text-[#63B1DC]">Check on-road price</span></p>
           <p class="text-[15px] font-[400]">Avg. Ex-Showroom price</p>
         </div>
