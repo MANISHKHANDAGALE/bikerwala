@@ -1,1 +1,163 @@
-<p>brand-bike works!</p>
+<div class="w-full  mt-[190px] text-[#D1D1D1]">
+
+  <!-- MAIN CONTAINER -->
+  <div class="w-full max-w-[1028px] mx-auto px-4 py-6">
+
+    <!-- BIKE TITLE + RATING -->
+    <div class="mb-4">
+      <h1 class="text-[26px] font-[700] !text-[#E8E8E8]">
+        Royal Enfield Classic 350
+      </h1>
+
+      <div class="flex items-center gap-3 text-[13px] mt-2">
+
+        <!-- Stars -->
+        <div class="flex gap-1 text-[#5EEAD4]">
+          <lucide-angular [img]="starIcon" size="18"> </lucide-angular>
+        </div>
+
+        <span class="h-4 w-px bg-[#3F3F3F]"></span>
+
+        <span class="text-[#9CA3AF]">
+          1040 Ratings
+        </span>
+
+        <!-- Vertical divider -->
+        <span class="h-4 w-px bg-[#3F3F3F]"></span>
+
+        <span class="text-[#63B1DC] cursor-pointer">
+          Write Review
+        </span>
+
+      </div>
+
+    </div>
+
+    <!-- CATEGORY TABS -->
+    <div>
+
+      <!-- Scrollable categories -->
+      <div class="category-scroll flex gap-[40px] w-full
+     overflow-x-auto whitespace-nowrap mt-[20px] ">
+
+        @for (category of categories; track category) {
+        <button (click)="onCategorySelect(category)" class="relative py-3 text-[12px] font-[600] uppercase transition"
+          [ngClass]="
+        selectedCategory === category
+          ? 'text-[#91D9D3] border-b-4 border-[#91D9D3]'
+          : 'text-[#D1D1D1]'
+      ">
+          {{ category }}
+        </button>
+        }
+
+      </div>
+
+
+      <!-- Divider line -->
+      <div class="w-full h-px bg-[#3F3F3F] mb-[12px]"></div>
+
+    </div>
+
+
+    <!-- HERO SECTION -->
+    <div class="mt-[15px] border-[#3F3F3F] border grid grid-cols-2 lg:grid-cols-[1.2fr_0.8fr] rounded-xl border gap-6">
+
+      <div class="w-[495px] ">
+        <img src="/assests/bike_img/royalenfield/bear-650.png"
+          class="w-[483px]  rounded-tl-[11px] bg-gray-400 h-[272px]" />
+
+        <div class="mt-2 space-x-4 p-2 gap-[32px] mb-2 items-center lg:ml-3.5 flex flex-row">
+          <div class="flex gap-x-2">
+            <i class="fi fi-sr-palette text-white text-[24px] rotate-[260deg]"></i>
+            <span class="lg:mt-[5px]">Colours</span>
+          </div>
+          <div class="flex gap-x-2">
+            <lucide-angular [img]="imageIcon" size="30" [strokeWidth]="1"></lucide-angular>
+            <span class="lg:mt-[1px]">Images</span>
+          </div>
+          <div class="flex gap-x-2 ">
+            <i class="fi fi-tr-play-circle text-white text-[24px] mt-[1px]"></i>
+            <span class="lg:mt-[5px]">Videos</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-full flex  flex-col">
+
+        <!-- Outer container (NO top border) -->
+        <div class="w-[483px] h-[75px]
+           flex items-center -ml-[7px] rounded-tr-[10px]
+           border-x border-b border-t-0 border-[#3F3F3F]
+           bg-[#1A1A1A]">
+
+          <!-- Variant -->
+          <div class="w-1/2 h-full
+             flex items-center justify-between
+             px-4
+             border-r border-[#3F3F3F]
+             cursor-pointer">
+
+            <div class="flex flex-col">
+              <p class="text-[12px] text-[#A1A1A1]">Variant</p>
+              <span class="text-[14px] font-[600] text-white">
+                Redditch
+              </span>
+            </div>
+
+            <lucide-angular [img]="rightArrowIcon" class="text-[#A1A1A1]">
+            </lucide-angular>
+          </div>
+
+          <!-- City (ONLY top-right rounded, no double border) -->
+          <div class="w-1/2 h-full
+             flex items-center justify-between
+             px-4 rounded-tr-xl
+             cursor-pointer
+             rounded-tr-xl">
+
+            <div class="flex flex-col">
+              <p class="text-[12px] text-[#A1A1A1]">City</p>
+              <span class="text-[14px] font-[600] text-white">
+                Show price in my city
+              </span>
+            </div>
+
+            <lucide-angular [img]="rightArrowIcon" class="text-[#A1A1A1]">
+            </lucide-angular>
+          </div>
+
+        </div>
+
+        <!-- price and avg div -->
+        <div class="w-[483px] h-[54px] ml-[5xp] mt-4">
+          <p class="text-[22px] font-[700] !text-[#D1D1D1]">₹ 1,81,129 <span
+              class="text-[13px] font-[400] ml-3 text-[#63B1DC]">Check on-road price</span></p>
+          <p class="text-[15px] font-[400]">Avg. Ex-Showroom price</p>
+        </div>
+
+        <!-- emi div -->
+        <div class="w-[463px] mt-[20px] -ml-[6px] rounded-md flex flex-row items-center h-[69px] bg-[#252525]">
+          <div class="ml-[5px] mt-[4px]">
+            <div class="flex ">
+              <p class="text-[15px] font-[400]">EMI Rs. 6,214/month</p>
+              <lucide-angular [img]="informationIcon" size="17" class="mt-[1px] ml-[3px]"></lucide-angular>
+            </div>
+
+            <p class="text-[15px] font-[400] !text-[#63B1DC]">EMI Calculator</p>
+          </div>
+
+          <button class="w-[130px] h-[32px] ml-36 -mt-[4px] border text-[#91D9D3] bg-[#1A1A1A] rounded-md">Get EMI
+            Offers</button>
+        </div>
+
+        <!-- offer button -->
+        <button
+          class="w-[314px] h-[48px] !text-[#D1D1D1] text-[18px] font-[500] -ml-[4px] bg-(--accent-primary) rounded-md mt-[20px]">Get
+          Year End Offers</button>
+      </div>
+
+    </div>
+
+  </div>
+</div>

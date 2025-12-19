@@ -22,7 +22,7 @@ export const routes: Routes = [
   },
   {
     path: ':brandId/:brandbike',
-    canActivate: [authGuard],
+    // canActivate: [authGuard],
     loadComponent: () =>
       import('./pages/brand-bike/brand-bike.component')
       },
