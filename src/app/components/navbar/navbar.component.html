@@ -49,7 +49,7 @@
 <div class=" fixed top-0 w-75 h-full -left-75 z-100 bg-[#1A1A1A] text-(--sidebar-color)  sidebar">
   <h1 class="text-[10px] mt-4 ml-4 w-full">EXPLORE BIKES</h1>
   @for (item of menu; track item) {
-      <div (click)="togglediv(item)" class="flex items-center justify-between cursor-pointer    sidebar h-[52px] p-4">
+      <div routerLink="/" (click)="togglediv(item)" class="flex items-center justify-between cursor-pointer    sidebar h-[52px] p-4">
       <div class="flex items-center gap-4">
         <mat-icon class="text-[#D1D1D1]!" fontSet="material-symbols-outlined">{{item.icon}}</mat-icon>
         <h2 class="text-[15px] text-[#E8E8E8] font-semibold">{{item.label}}</h2>
