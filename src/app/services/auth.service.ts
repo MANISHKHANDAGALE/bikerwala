@@ -24,7 +24,7 @@ export class AuthService {
   }
   removeToken(){
     localStorage.removeItem('token')
-    this.toast.success("User Logout")
+    // this.toast.success("User Logout")
   }
   isLoggedIn():boolean{
     return !!this.getToken();
