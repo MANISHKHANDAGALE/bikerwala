@@ -27,10 +27,6 @@ export const routes: Routes = [
       import('./pages/brand-bike/brand-bike.component')
       },
       {
-        path:"royal",
-        component:RoyalEnfieldComponent
-      },
-      {
     path:'bikebrand',
     canActivate: [authGuard],
     loadComponent:()=> import('./components/bikecomponents/royal-enfield/royal-enfield.component')

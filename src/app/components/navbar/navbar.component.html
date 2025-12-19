@@ -46,6 +46,7 @@
 <div (click)="close()" class="overlay w-full h-full bg-black/75 text-(--sidebar-color) rounded-tr-2xl fixed top-14 left-0 opacity-0 hidden z-90">
 </div>
 <div class=" fixed top-0 w-75 h-full -left-75 z-100 bg-[#1A1A1A] text-(--sidebar-color)  sidebar">
+  <h1 class="text-[10px]">EXPLORE BIKES</h1>
   @for (item of menu; track item) {
       <div (click)="togglediv(item)" class="flex items-center justify-between cursor-pointer    sidebar h-[52px] p-4">
       <div class="flex items-center gap-4">

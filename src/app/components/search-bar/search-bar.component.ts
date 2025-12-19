@@ -44,24 +44,32 @@ handleOutsideClick(event: MouseEvent) {
 open() {
   this.show = true;
 }
-
 close() {
   this.show = false;
+  this.query = ''
 }
-selectedBike(){
-  if(this.query !== ''){
-    this.router.navigate(['/brand/bikebrand'],{
-    queryParams:{
-      bike : this.query
-    }
-    })
-    this.close();
-    this.query = ''
-  }
-  else{
-    // alert("Please Enter Bike Name")
-    this.toaster.error("Please Enter Bike Name")
-  }
+private slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .trim()
+    .replace(/&/g, 'and')
+    .replace(/[^a-z0-9\s-]/g, '') // remove special chars
+    .replace(/\s+/g, '-')        // spaces → hyphen
+    .replace(/-+/g, '-');        // remove duplicate hyphens
+}
+
+selectedBike(val:string){
+if(!val.trim()){
+this.toaster.error("Please Enter Bike Name");
+return
+}
+const word = val.trim().split(' ')
+const brandName = word.slice(0,2).join(' ')
+const bikeName = word.slice(2).join(' ')
+const brandSlug = this.slugify(brandName)
+const bikeSlug = this.slugify(bikeName)
+this.router.navigate(['/',brandSlug,bikeSlug])
+this.close()
 }
 selectedSearch(bike:Prodcuts){
     const brandSlug = bike.brand?.toLowerCase().replace(/\s+/g, '-') ?? 'brand';
@@ -69,7 +77,6 @@ selectedSearch(bike:Prodcuts){
     this.recentSearch.push(bike.title)
     this.recentSearch = this.recentSearch.map((m)=>m).slice(-5)
     localStorage.setItem('recent_search',JSON.stringify(this.recentSearch))
-    this.query = ''
     this.close();
 }
 select(value: any) {
@@ -95,12 +102,6 @@ select(value: any) {
     // console.log(bikes)
     const filtered = bikes.filter( bike => bike.brand?.toLowerCase().includes(term) || bike.title.toLowerCase().includes(term) || bike.category?.toLowerCase().includes(term) )
     this.suggestions.set(filtered)
-    // console.log("bikesFlat",bikes)
-    // console.log("filtered bikes",filtered)
-    // this.suggestions.set(data.filter((item)=> item.toLowerCase().includes(term)).slice(0,5))
-    // console.log("searched :",this.suggestions())
-    // console.log(" recent searched :",this.recentSearch)
-    // this.recentSearch = this.recentSearch.filter((i)=> i !== '').slice(0,5)
   },500)
  }
 }
