@@ -1,22 +1,27 @@
 import { Component } from '@angular/core';
-import { SliderComponent } from "../../slider/slider.component";
+import { SliderComponent } from '../../slider/slider.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { CardComponent } from "../../card/card.component";
+import { CardComponent } from '../../card/card.component';
 import { Prodcuts, productsList } from '../../../data/data';
-import { CurrencyPipe } from '@angular/common';
+import { RouterLink } from '@angular/router';
+
+interface OfferBike extends Prodcuts {
+  displayPrice?: string;
+}
 
 @Component({
   selector: 'app-offer-section',
-  imports: [SliderComponent, CardComponent],
+  imports: [SliderComponent, CardComponent, RouterLink],
   templateUrl: './offer-section.component.html',
   styleUrl: './offer-section.component.css',
-  schemas:  [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class OfferSectionComponent {
-  
+
   spaceBetween = 5;
   loop = true;
   navigation = true;
+
   breakpoints = {
     0: {
       slidesPerView: 2,
@@ -30,20 +35,26 @@ export class OfferSectionComponent {
       slidesPerView: 4,
       spaceBetween: 10,
     },
-    // no 1280+ breakpoint → falls back to slidesPerView = 4
   };
 
-  slides: Prodcuts[] = [];
+  slides: OfferBike[] = [];
 
   ngOnInit() {
     this.slides = this.getRandomBikes(productsList, 18);
   }
 
-  private getRandomBikes(list: Prodcuts[], count: number): Prodcuts[] {
+  private getRandomBikes(list: Prodcuts[], count: number): OfferBike[] {
     return [...list]
-      .filter(bike => bike.priceExShowroom) // only priced bikes
+      .filter(bike => bike.priceExShowroom)
       .sort(() => 0.5 - Math.random())
-      .slice(0, count);
+      .slice(0, count)
+      .map(bike => ({
+        ...bike,
+        displayPrice: this.formatPrice(bike.priceExShowroom!)
+      }));
   }
 
+  private formatPrice(price: number): string {
+    return price.toLocaleString('en-IN');
+  }
 }
