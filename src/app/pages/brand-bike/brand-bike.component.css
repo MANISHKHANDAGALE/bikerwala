@@ -1,0 +1,36 @@
+/* ===============================
+   Custom Horizontal Scrollbar
+   =============================== */
+
+/* Firefox */
+.category-scroll {
+  scrollbar-width: 100%;                 /* thicker than thin */
+  scrollbar-color: #B5B5B5 transparent;
+  scroll-behavior: smooth;
+ 
+}
+
+/* Chrome, Edge, Safari */
+.category-scroll::-webkit-scrollbar {
+  height: 300px;   /* ⬅️ increase thickness (try 18px–24px) */
+}
+
+/* Track */
+.category-scroll::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 999px;
+}
+
+/* Thumb (pill style) */
+.category-scroll::-webkit-scrollbar-thumb {
+  background-color: #B5B5B5;
+  border-radius: 999px;
+  border: 2px solid #ffffff;             /* white border */
+}
+
+/* No hover effect */
+
+/* Remove arrows */
+.category-scroll::-webkit-scrollbar-button {
+  display: none;
+}
