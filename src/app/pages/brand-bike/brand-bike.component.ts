@@ -12,10 +12,11 @@ import {
 
 import { Prodcuts } from '../../data/data';
 import { Allbike, allbikeslist } from '../../data/all_bikes'; // <-- your Allbike object
+import { BikedetailTableComponent } from '../../components/single-bike/bikedetail-table/bikedetail-table.component';
 
 @Component({
   selector: 'app-brand-bike',
-  imports: [CommonModule, LucideAngularModule],
+  imports: [CommonModule, LucideAngularModule,BikedetailTableComponent],
   templateUrl: './brand-bike.component.html',
   styleUrl: './brand-bike.component.css'
 })

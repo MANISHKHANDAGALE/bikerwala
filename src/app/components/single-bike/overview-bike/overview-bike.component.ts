@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 import { Allbike, allbikeslist } from '../../../data/all_bikes';
 import { ActivatedRoute } from '@angular/router';
 import { Prodcuts } from '../../../data/data';
+import { BikedetailTableComponent } from "../bikedetail-table/bikedetail-table.component";
 
 @Component({
   selector: 'app-overview-card',
-  imports: [CommonModule],
+  imports: [CommonModule, BikedetailTableComponent],
   standalone: true,
   templateUrl: './overview-bike.component.html',
   styleUrls: ['./overview-bike.component.css']
@@ -57,5 +58,7 @@ export class OverviewCardComponent implements OnInit {
   });
   this.brand = allbikeslist.royalenfield.bikes.filter((bike: any) => bike.slug === this.brandslug);
   console.log('✅ Bike found:', this.brand);
+  
 }
+
 }
